@@ -3,11 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belbin Team Roles Questionnaire</title>
+    <title>Belbin Team Roles Questionnaire - By Chuks Abanum</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: Arial, sans-serif; }
         .hidden { display: none; }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 20px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -20,50 +59,82 @@
             <form id="formA" class="space-y-4">
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="A1" class="mr-2 rounded border-gray-300" onchange="validateSection('formA')"> I can be relied upon to see that work that needs to be done is organised.
-                        <input type="number" name="pointsA1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="A1" onchange="validateSection('formA')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I can be relied upon to see that work that needs to be done is organised.</span>
+                        <input type="number" name="pointsA1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="A2" class="mr-2 rounded border-gray-300" onchange="validateSection('formA')"> I pick up slips and omissions that others fail to notice.
-                        <input type="number" name="pointsA2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="A2" onchange="validateSection('formA')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I pick up slips and omissions that others fail to notice.</span>
+                        <input type="number" name="pointsA2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="A3" class="mr-2 rounded border-gray-300" onchange="validateSection('formA')"> I react strongly when meetings look like losing track of the main objective.
-                        <input type="number" name="pointsA3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="A3" onchange="validateSection('formA')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I react strongly when meetings look like losing track of the main objective.</span>
+                        <input type="number" name="pointsA3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="A4" class="mr-2 rounded border-gray-300" onchange="validateSection('formA')"> I produce original suggestions.
-                        <input type="number" name="pointsA4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="A4" onchange="validateSection('formA')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I produce original suggestions.</span>
+                        <input type="number" name="pointsA4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="A5" class="mr-2 rounded border-gray-300" onchange="validateSection('formA')"> I analyse other people's ideas objectively, for both merits and failings.
-                        <input type="number" name="pointsA5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="A5" onchange="validateSection('formA')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I analyse other people's ideas objectively, for both merits and failings.</span>
+                        <input type="number" name="pointsA5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="A6" class="mr-2 rounded border-gray-300" onchange="validateSection('formA')"> I am keen to find out the latest ideas and developments.
-                        <input type="number" name="pointsA6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="A6" onchange="validateSection('formA')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I am keen to find out the latest ideas and developments.</span>
+                        <input type="number" name="pointsA6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="A7" class="mr-2 rounded border-gray-300" onchange="validateSection('formA')"> I have an aptitude for organising people.
-                        <input type="number" name="pointsA7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="A7" onchange="validateSection('formA')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I have an aptitude for organising people.</span>
+                        <input type="number" name="pointsA7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="A8" class="mr-2 rounded border-gray-300" onchange="validateSection('formA')"> I am always ready to support good suggestions that help to resolve a problem.
-                        <input type="number" name="pointsA8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="A8" onchange="validateSection('formA')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I am always ready to support good suggestions that help to resolve a problem.</span>
+                        <input type="number" name="pointsA8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
             </form>
@@ -75,50 +146,82 @@
             <form id="formB" class="space-y-4">
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="B1" class="mr-2 rounded border-gray-300" onchange="validateSection('formB')"> I like to have a strong influence on decisions.
-                        <input type="number" name="pointsB1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="B1" onchange="validateSection('formB')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I like to have a strong influence on decisions.</span>
+                        <input type="number" name="pointsB1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="B2" class="mr-2 rounded border-gray-300" onchange="validateSection('formB')"> I feel in my element where work requires a high degree of attention & concentration.
-                        <input type="number" name="pointsB2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="B2" onchange="validateSection('formB')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I feel in my element where work requires a high degree of attention & concentration.</span>
+                        <input type="number" name="pointsB2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="B3" class="mr-2 rounded border-gray-300" onchange="validateSection('formB')"> I am concerned to help colleagues with their problems.
-                        <input type="number" name="pointsB3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="B3" onchange="validateSection('formB')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I am concerned to help colleagues with their problems.</span>
+                        <input type="number" name="pointsB3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="B4" class="mr-2 rounded border-gray-300" onchange="validateSection('formB')"> I like to make critical discrimination between alternatives.
-                        <input type="number" name="pointsB4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="B4" onchange="validateSection('formB')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I like to make critical discrimination between alternatives.</span>
+                        <input type="number" name="pointsB4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="B5" class="mr-2 rounded border-gray-300" onchange="validateSection('formB')"> I tend to have a creative approach to problem solving.
-                        <input type="number" name="pointsB5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="B5" onchange="validateSection('formB')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I tend to have a creative approach to problem solving.</span>
+                        <input type="number" name="pointsB5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="B6" class="mr-2 rounded border-gray-300" onchange="validateSection('formB')"> I enjoy reconciling different points of view.
-                        <input type="number" name="pointsB6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="B6" onchange="validateSection('formB')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I enjoy reconciling different points of view.</span>
+                        <input type="number" name="pointsB6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="B7" class="mr-2 rounded border-gray-300" onchange="validateSection('formB')"> I am more interested in practicalities than new ideas.
-                        <input type="number" name="pointsB7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="B7" onchange="validateSection('formB')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I am more interested in practicalities than new ideas.</span>
+                        <input type="number" name="pointsB7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="B8" class="mr-2 rounded border-gray-300" onchange="validateSection('formB')"> I particularly enjoy exploring different views and techniques.
-                        <input type="number" name="pointsB8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="B8" onchange="validateSection('formB')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I particularly enjoy exploring different views and techniques.</span>
+                        <input type="number" name="pointsB8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
             </form>
@@ -130,50 +233,82 @@
             <form id="formC" class="space-y-4">
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="C1" class="mr-2 rounded border-gray-300" onchange="validateSection('formC')"> I keep a watching eye on areas where difficulty may arise.
-                        <input type="number" name="pointsC1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="C1" onchange="validateSection('formC')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I keep a watching eye on areas where difficulty may arise.</span>
+                        <input type="number" name="pointsC1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="C2" class="mr-2 rounded border-gray-300" onchange="validateSection('formC')"> I explore ideas that may have a wider application than in the immediate task.
-                        <input type="number" name="pointsC2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="C2" onchange="validateSection('formC')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I explore ideas that may have a wider application than in the immediate task.</span>
+                        <input type="number" name="pointsC2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="C3" class="mr-2 rounded border-gray-300" onchange="validateSection('formC')"> I like to weigh up and evaluate a range of suggestions thoroughly before choosing.
-                        <input type="number" name="pointsC3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="C3" onchange="validateSection('formC')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I like to weigh up and evaluate a range of suggestions thoroughly before choosing.</span>
+                        <input type="number" name="pointsC3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="C4" class="mr-2 rounded border-gray-300" onchange="validateSection('formC')"> I can co-ordinate and use productively other people's abilities and talents.
-                        <input type="number" name="pointsC4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="C4" onchange="validateSection('formC')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I can co-ordinate and use productively other people's abilities and talents.</span>
+                        <input type="number" name="pointsC4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="C5" class="mr-2 rounded border-gray-300" onchange="validateSection('formC')"> I maintain a steady systematic approach, whatever the pressures.
-                        <input type="number" name="pointsC5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="C5" onchange="validateSection('formC')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I maintain a steady systematic approach, whatever the pressures.</span>
+                        <input type="number" name="pointsC5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="C6" class="mr-2 rounded border-gray-300" onchange="validateSection('formC')"> I often produce a new approach to a long continuing problem.
-                        <input type="number" name="pointsC6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="C6" onchange="validateSection('formC')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I often produce a new approach to a long continuing problem.</span>
+                        <input type="number" name="pointsC6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="C7" class="mr-2 rounded border-gray-300" onchange="validateSection('formC')"> I am ready to make my personal views known in a forceful way if necessary.
-                        <input type="number" name="pointsC7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="C7" onchange="validateSection('formC')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I am ready to make my personal views known in a forceful way if necessary.</span>
+                        <input type="number" name="pointsC7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="C8" class="mr-2 rounded border-gray-300" onchange="validateSection('formC')"> I am ready to help whenever I can.
-                        <input type="number" name="pointsC8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="C8" onchange="validateSection('formC')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I am ready to help whenever I can.</span>
+                        <input type="number" name="pointsC8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
             </form>
@@ -185,50 +320,82 @@
             <form id="formD" class="space-y-4">
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="D1" class="mr-2 rounded border-gray-300" onchange="validateSection('formD')"> I am keen to see there is nothing vague about my task and objectives.
-                        <input type="number" name="pointsD1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="D1" onchange="validateSection('formD')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I am keen to see there is nothing vague about my task and objectives.</span>
+                        <input type="number" name="pointsD1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="D2" class="mr-2 rounded border-gray-300" onchange="validateSection('formD')"> I am not reluctant to emphasise my own point of view in meetings.
-                        <input type="number" name="pointsD2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="D2" onchange="validateSection('formD')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I am not reluctant to emphasise my own point of view in meetings.</span>
+                        <input type="number" name="pointsD2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="D3" class="mr-2 rounded border-gray-300" onchange="validateSection('formD')"> I can work with all sorts of people provided that they have got something worthwhile to contribute.
-                        <input type="number" name="pointsD3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="D3" onchange="validateSection('formD')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I can work with all sorts of people provided that they have got something worthwhile to contribute.</span>
+                        <input type="number" name="pointsD3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="D4" class="mr-2 rounded border-gray-300" onchange="validateSection('formD')"> I make a point of following up interesting ideas and/or people.
-                        <input type="number" name="pointsD4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="D4" onchange="validateSection('formD')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I make a point of following up interesting ideas and/or people.</span>
+                        <input type="number" name="pointsD4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="D5" class="mr-2 rounded border-gray-300" onchange="validateSection('formD')"> I can usually find the argument to refute unsound propositions.
-                        <input type="number" name="pointsD5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="D5" onchange="validateSection('formD')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I can usually find the argument to refute unsound propositions.</span>
+                        <input type="number" name="pointsD5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="D6" class="mr-2 rounded border-gray-300" onchange="validateSection('formD')"> I tend to see patterns where others would see items as unconnected.
-                        <input type="number" name="pointsD6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="D6" onchange="validateSection('formD')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I tend to see patterns where others would see items as unconnected.</span>
+                        <input type="number" name="pointsD6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="D7" class="mr-2 rounded border-gray-300" onchange="validateSection('formD')"> Being busy gives me real satisfaction.
-                        <input type="number" name="pointsD7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="D7" onchange="validateSection('formD')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">Being busy gives me real satisfaction.</span>
+                        <input type="number" name="pointsD7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="D8" class="mr-2 rounded border-gray-300" onchange="validateSection('formD')"> I have a quiet interest in getting to know people better.
-                        <input type="number" name="pointsD8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="D8" onchange="validateSection('formD')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I have a quiet interest in getting to know people better.</span>
+                        <input type="number" name="pointsD8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
             </form>
@@ -240,50 +407,82 @@
             <form id="formE" class="space-y-4">
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="E1" class="mr-2 rounded border-gray-300" onchange="validateSection('formE')"> I often find my imagination frustrated by working in a group.
-                        <input type="number" name="pointsE1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="E1" onchange="validateSection('formE')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I often find my imagination frustrated by working in a group.</span>
+                        <input type="number" name="pointsE1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="E2" class="mr-2 rounded border-gray-300" onchange="validateSection('formE')"> I find my personal skill particularly appropriate in achieving agreement.
-                        <input type="number" name="pointsE2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="E2" onchange="validateSection('formE')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I find my personal skill particularly appropriate in achieving agreement.</span>
+                        <input type="number" name="pointsE2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="E3" class="mr-2 rounded border-gray-300" onchange="validateSection('formE')"> My feelings seldom interfere with my judgment.
-                        <input type="number" name="pointsE3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="E3" onchange="validateSection('formE')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">My feelings seldom interfere with my judgment.</span>
+                        <input type="number" name="pointsE3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="E4" class="mr-2 rounded border-gray-300" onchange="validateSection('formE')"> I strive to build up an effective structure.
-                        <input type="number" name="pointsE4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="E4" onchange="validateSection('formE')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I strive to build up an effective structure.</span>
+                        <input type="number" name="pointsE4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="E5" class="mr-2 rounded border-gray-300" onchange="validateSection('formE')"> I can work with people who vary widely in their personal qualities and outlook.
-                        <input type="number" name="pointsE5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="E5" onchange="validateSection('formE')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I can work with people who vary widely in their personal qualities and outlook.</span>
+                        <input type="number" name="pointsE5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="E6" class="mr-2 rounded border-gray-300" onchange="validateSection('formE')"> I feel it is sometimes worth incurring some temporary unpopularity if one is to succeed in getting one's views across in a group.
-                        <input type="number" name="pointsE6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="E6" onchange="validateSection('formE')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I feel it is sometimes worth incurring some temporary unpopularity if one is to succeed in getting one's views across in a group.</span>
+                        <input type="number" name="pointsE6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="E7" class="mr-2 rounded border-gray-300" onchange="validateSection('formE')"> I usually know someone whose specialist knowledge is particularly apt.
-                        <input type="number" name="pointsE7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="E7" onchange="validateSection('formE')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I usually know someone whose specialist knowledge is particularly apt.</span>
+                        <input type="number" name="pointsE7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="E8" class="mr-2 rounded border-gray-300" onchange="validateSection('formE')"> I seem to develop a natural sense of urgency.
-                        <input type="number" name="pointsE8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="E8" onchange="validateSection('formE')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I seem to develop a natural sense of urgency.</span>
+                        <input type="number" name="pointsE8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
             </form>
@@ -295,50 +494,82 @@
             <form id="formF" class="space-y-4">
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="F1" class="mr-2 rounded border-gray-300" onchange="validateSection('formF')"> I start to look around for possible ideas and openings.
-                        <input type="number" name="pointsF1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="F1" onchange="validateSection('formF')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I start to look around for possible ideas and openings.</span>
+                        <input type="number" name="pointsF1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="F2" class="mr-2 rounded border-gray-300" onchange="validateSection('formF')"> I am concerned to finish and perfect current work before I start.
-                        <input type="number" name="pointsF2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="F2" onchange="validateSection('formF')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I am concerned to finish and perfect current work before I start.</span>
+                        <input type="number" name="pointsF2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="F3" class="mr-2 rounded border-gray-300" onchange="validateSection('formF')"> I approach the problem in a carefully analytical way.
-                        <input type="number" name="pointsF3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="F3" onchange="validateSection('formF')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I approach the problem in a carefully analytical way.</span>
+                        <input type="number" name="pointsF3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="F4" class="mr-2 rounded border-gray-300" onchange="validateSection('formF')"> I am able to assert myself to get other people involved if necessary.
-                        <input type="number" name="pointsF4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="F4" onchange="validateSection('formF')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I am able to assert myself to get other people involved if necessary.</span>
+                        <input type="number" name="pointsF4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="F5" class="mr-2 rounded border-gray-300" onchange="validateSection('formF')"> I am able to take an independent and innovative look at most situations.
-                        <input type="number" name="pointsF5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="F5" onchange="validateSection('formF')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I am able to take an independent and innovative look at most situations.</span>
+                        <input type="number" name="pointsF5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="F6" class="mr-2 rounded border-gray-300" onchange="validateSection('formF')"> I am happy to take the lead when action is required.
-                        <input type="number" name="pointsF6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="F6" onchange="validateSection('formF')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I am happy to take the lead when action is required.</span>
+                        <input type="number" name="pointsF6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="F7" class="mr-2 rounded border-gray-300" onchange="validateSection('formF')"> I can respond positively to my colleagues and their initiatives.
-                        <input type="number" name="pointsF7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="F7" onchange="validateSection('formF')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I can respond positively to my colleagues and their initiatives.</span>
+                        <input type="number" name="pointsF7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="F8" class="mr-2 rounded border-gray-300" onchange="validateSection('formF')"> I find it hard to give in a job where the goals are not clearly defined.
-                        <input type="number" name="pointsF8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="F8" onchange="validateSection('formF')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I find it hard to give in a job where the goals are not clearly defined.</span>
+                        <input type="number" name="pointsF8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
             </form>
@@ -350,50 +581,82 @@
             <form id="formG" class="space-y-4">
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="G1" class="mr-2 rounded border-gray-300" onchange="validateSection('formG')"> I think I have a talent for sorting out the concrete steps that need to be taken given a broad brief.
-                        <input type="number" name="pointsG1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="G1" onchange="validateSection('formG')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I think I have a talent for sorting out the concrete steps that need to be taken given a broad brief.</span>
+                        <input type="number" name="pointsG1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="G2" class="mr-2 rounded border-gray-300" onchange="validateSection('formG')"> My considered judgement may take time but is usually near the mark.
-                        <input type="number" name="pointsG2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="G2" onchange="validateSection('formG')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">My considered judgement may take time but is usually near the mark.</span>
+                        <input type="number" name="pointsG2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="G3" class="mr-2 rounded border-gray-300" onchange="validateSection('formG')"> A broad range of personal contacts is important to my style of working.
-                        <input type="number" name="pointsG3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="G3" onchange="validateSection('formG')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">A broad range of personal contacts is important to my style of working.</span>
+                        <input type="number" name="pointsG3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="G4" class="mr-2 rounded border-gray-300" onchange="validateSection('formG')"> I have an eye for getting the details right.
-                        <input type="number" name="pointsG4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="G4" onchange="validateSection('formG')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I have an eye for getting the details right.</span>
+                        <input type="number" name="pointsG4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="G5" class="mr-2 rounded border-gray-300" onchange="validateSection('formG')"> I try to make my mark in group meetings.
-                        <input type="number" name="pointsG5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="G5" onchange="validateSection('formG')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I try to make my mark in group meetings.</span>
+                        <input type="number" name="pointsG5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="G6" class="mr-2 rounded border-gray-300" onchange="validateSection('formG')"> I can see how ideas and techniques can be used in new relationships.
-                        <input type="number" name="pointsG6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="G6" onchange="validateSection('formG')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I can see how ideas and techniques can be used in new relationships.</span>
+                        <input type="number" name="pointsG6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="G7" class="mr-2 rounded border-gray-300" onchange="validateSection('formG')"> I see both sides of a problem and take a decision acceptable to all.
-                        <input type="number" name="pointsG7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="G7" onchange="validateSection('formG')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I see both sides of a problem and take a decision acceptable to all.</span>
+                        <input type="number" name="pointsG7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
                 <div class="question">
                     <label class="flex items-center">
-                        <input type="checkbox" name="G8" class="mr-2 rounded border-gray-300" onchange="validateSection('formG')"> I get on well with others and work hard for the team.
-                        <input type="number" name="pointsG8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                        <span class="switch">
+                            <input type="checkbox" name="G8" onchange="validateSection('formG')">
+                            <span class="slider"></span>
+                        </span>
+                        <span class="ml-4">I get on well with others and work hard for the team.</span>
+                        <input type="number" name="pointsG8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
                     </label>
                 </div>
             </form>
@@ -517,6 +780,13 @@
             <div id="profileConclusion" class="p-4 bg-gray-100 rounded shadow"></div>
         </div>
     </div>
+
+    <footer class="mt-8 p-4 bg-gray-200 text-center rounded">
+        <p class="text-sm">This application is developed for educational purposes and there is no guarantee the program will work as intended. It is free for use and redistribution under the MIT License.</p>
+        <p class="text-sm mt-2">Developer: Chuks</p>
+        <p class="text-sm">Email: chuks@example.com</p>
+        <p class="text-sm">Phone: +1234567890</p>
+    </footer>
 
     <script>
         function validateSection(formId) {
