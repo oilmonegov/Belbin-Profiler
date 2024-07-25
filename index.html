@@ -4,513 +4,534 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Belbin Team Roles Questionnaire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        h1 { text-align: center; }
-        .section { margin-bottom: 20px; }
-        table { width: 100%; border-collapse: collapse; }
-        table, th, td { border: 1px solid black; }
-        th, td { padding: 10px; text-align: center; }
-        label { display: block; margin: 5px 0; }
-        input[type="number"] { width: 50px; }
-        .question { margin-bottom: 10px; }
+        body { font-family: Arial, sans-serif; }
+        .hidden { display: none; }
     </style>
 </head>
-<body>
-    <h1>Belbin Team Roles Questionnaire</h1>
+<body class="bg-gray-100 text-gray-800">
+    <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+        <h1 class="text-3xl font-bold text-center mb-8">Belbin Team Roles Questionnaire</h1>
 
-    <div class="section" id="sectionA">
-        <h2>Section A - When involved in a project with other people:</h2>
-        <form id="formA">
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="A1"> I can be relied upon to see that work that needs to be done is organised.
-                    <input type="number" name="pointsA1" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="A2"> I pick up slips and omissions that others fail to notice.
-                    <input type="number" name="pointsA2" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="A3"> I react strongly when meetings look like losing track of the main objective.
-                    <input type="number" name="pointsA3" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="A4"> I produce original suggestions.
-                    <input type="number" name="pointsA4" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="A5"> I analyse other people's ideas objectively, for both merits and failings.
-                    <input type="number" name="pointsA5" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="A6"> I am keen to find out the latest ideas and developments.
-                    <input type="number" name="pointsA6" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="A7"> I have an aptitude for organising people.
-                    <input type="number" name="pointsA7" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="A8"> I am always ready to support good suggestions that help to resolve a problem.
-                    <input type="number" name="pointsA8" min="0" max="10">
-                </label>
-            </div>
-        </form>
-    </div>
+        <!-- Section A -->
+        <div class="section mb-8" id="sectionA">
+            <h2 class="text-2xl font-semibold mb-4">Section A - When involved in a project with other people:</h2>
+            <form id="formA" class="space-y-4">
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="A1" class="mr-2 rounded border-gray-300" onchange="validateSection('formA')"> I can be relied upon to see that work that needs to be done is organised.
+                        <input type="number" name="pointsA1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="A2" class="mr-2 rounded border-gray-300" onchange="validateSection('formA')"> I pick up slips and omissions that others fail to notice.
+                        <input type="number" name="pointsA2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="A3" class="mr-2 rounded border-gray-300" onchange="validateSection('formA')"> I react strongly when meetings look like losing track of the main objective.
+                        <input type="number" name="pointsA3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="A4" class="mr-2 rounded border-gray-300" onchange="validateSection('formA')"> I produce original suggestions.
+                        <input type="number" name="pointsA4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="A5" class="mr-2 rounded border-gray-300" onchange="validateSection('formA')"> I analyse other people's ideas objectively, for both merits and failings.
+                        <input type="number" name="pointsA5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="A6" class="mr-2 rounded border-gray-300" onchange="validateSection('formA')"> I am keen to find out the latest ideas and developments.
+                        <input type="number" name="pointsA6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="A7" class="mr-2 rounded border-gray-300" onchange="validateSection('formA')"> I have an aptitude for organising people.
+                        <input type="number" name="pointsA7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="A8" class="mr-2 rounded border-gray-300" onchange="validateSection('formA')"> I am always ready to support good suggestions that help to resolve a problem.
+                        <input type="number" name="pointsA8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+            </form>
+        </div>
 
-    <div class="section" id="sectionB">
-        <h2>Section B - In seeking satisfaction through my work:</h2>
-        <form id="formB">
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="B1"> I like to have a strong influence on decisions.
-                    <input type="number" name="pointsB1" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="B2"> I feel in my element where work requires a high degree of attention & concentration.
-                    <input type="number" name="pointsB2" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="B3"> I am concerned to help colleagues with their problems.
-                    <input type="number" name="pointsB3" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="B4"> I like to make critical discrimination between alternatives.
-                    <input type="number" name="pointsB4" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="B5"> I tend to have a creative approach to problem solving.
-                    <input type="number" name="pointsB5" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="B6"> I enjoy reconciling different points of view.
-                    <input type="number" name="pointsB6" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="B7"> I am more interested in practicalities than new ideas.
-                    <input type="number" name="pointsB7" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="B8"> I particularly enjoy exploring different views and techniques.
-                    <input type="number" name="pointsB8" min="0" max="10">
-                </label>
-            </div>
-        </form>
-    </div>
+        <!-- Section B -->
+        <div class="section mb-8" id="sectionB">
+            <h2 class="text-2xl font-semibold mb-4">Section B - In seeking satisfaction through my work:</h2>
+            <form id="formB" class="space-y-4">
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="B1" class="mr-2 rounded border-gray-300" onchange="validateSection('formB')"> I like to have a strong influence on decisions.
+                        <input type="number" name="pointsB1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="B2" class="mr-2 rounded border-gray-300" onchange="validateSection('formB')"> I feel in my element where work requires a high degree of attention & concentration.
+                        <input type="number" name="pointsB2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="B3" class="mr-2 rounded border-gray-300" onchange="validateSection('formB')"> I am concerned to help colleagues with their problems.
+                        <input type="number" name="pointsB3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="B4" class="mr-2 rounded border-gray-300" onchange="validateSection('formB')"> I like to make critical discrimination between alternatives.
+                        <input type="number" name="pointsB4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="B5" class="mr-2 rounded border-gray-300" onchange="validateSection('formB')"> I tend to have a creative approach to problem solving.
+                        <input type="number" name="pointsB5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="B6" class="mr-2 rounded border-gray-300" onchange="validateSection('formB')"> I enjoy reconciling different points of view.
+                        <input type="number" name="pointsB6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="B7" class="mr-2 rounded border-gray-300" onchange="validateSection('formB')"> I am more interested in practicalities than new ideas.
+                        <input type="number" name="pointsB7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="B8" class="mr-2 rounded border-gray-300" onchange="validateSection('formB')"> I particularly enjoy exploring different views and techniques.
+                        <input type="number" name="pointsB8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+            </form>
+        </div>
 
-    <div class="section" id="sectionC">
-        <h2>Section C - When the team is trying to solve a particularly complex problem:</h2>
-        <form id="formC">
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="C1"> I keep a watching eye on areas where difficulty may arise.
-                    <input type="number" name="pointsC1" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="C2"> I explore ideas that may have a wider application than in the immediate task.
-                    <input type="number" name="pointsC2" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="C3"> I like to weigh up and evaluate a range of suggestions thoroughly before choosing.
-                    <input type="number" name="pointsC3" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="C4"> I can co-ordinate and use productively other people's abilities and talents.
-                    <input type="number" name="pointsC4" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="C5"> I maintain a steady systematic approach, whatever the pressures.
-                    <input type="number" name="pointsC5" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="C6"> I often produce a new approach to a long continuing problem.
-                    <input type="number" name="pointsC6" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="C7"> I am ready to make my personal views known in a forceful way if necessary.
-                    <input type="number" name="pointsC7" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="C8"> I am ready to help whenever I can.
-                    <input type="number" name="pointsC8" min="0" max="10">
-                </label>
-            </div>
-        </form>
-    </div>
+        <!-- Section C -->
+        <div class="section mb-8" id="sectionC">
+            <h2 class="text-2xl font-semibold mb-4">Section C - When the team is trying to solve a particularly complex problem:</h2>
+            <form id="formC" class="space-y-4">
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="C1" class="mr-2 rounded border-gray-300" onchange="validateSection('formC')"> I keep a watching eye on areas where difficulty may arise.
+                        <input type="number" name="pointsC1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="C2" class="mr-2 rounded border-gray-300" onchange="validateSection('formC')"> I explore ideas that may have a wider application than in the immediate task.
+                        <input type="number" name="pointsC2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="C3" class="mr-2 rounded border-gray-300" onchange="validateSection('formC')"> I like to weigh up and evaluate a range of suggestions thoroughly before choosing.
+                        <input type="number" name="pointsC3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="C4" class="mr-2 rounded border-gray-300" onchange="validateSection('formC')"> I can co-ordinate and use productively other people's abilities and talents.
+                        <input type="number" name="pointsC4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="C5" class="mr-2 rounded border-gray-300" onchange="validateSection('formC')"> I maintain a steady systematic approach, whatever the pressures.
+                        <input type="number" name="pointsC5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="C6" class="mr-2 rounded border-gray-300" onchange="validateSection('formC')"> I often produce a new approach to a long continuing problem.
+                        <input type="number" name="pointsC6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="C7" class="mr-2 rounded border-gray-300" onchange="validateSection('formC')"> I am ready to make my personal views known in a forceful way if necessary.
+                        <input type="number" name="pointsC7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="C8" class="mr-2 rounded border-gray-300" onchange="validateSection('formC')"> I am ready to help whenever I can.
+                        <input type="number" name="pointsC8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+            </form>
+        </div>
 
-    <div class="section" id="sectionD">
-        <h2>Section D - In carrying out my day-to-day work:</h2>
-        <form id="formD">
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="D1"> I am keen to see there is nothing vague about my task and objectives.
-                    <input type="number" name="pointsD1" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="D2"> I am not reluctant to emphasise my own point of view in meetings.
-                    <input type="number" name="pointsD2" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="D3"> I can work with all sorts of people provided that they have got something worthwhile to contribute.
-                    <input type="number" name="pointsD3" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="D4"> I make a point of following up interesting ideas and/or people.
-                    <input type="number" name="pointsD4" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="D5"> I can usually find the argument to refute unsound propositions.
-                    <input type="number" name="pointsD5" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="D6"> I tend to see patterns where others would see items as unconnected.
-                    <input type="number" name="pointsD6" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="D7"> Being busy gives me real satisfaction.
-                    <input type="number" name="pointsD7" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="D8"> I have a quiet interest in getting to know people better.
-                    <input type="number" name="pointsD8" min="0" max="10">
-                </label>
-            </div>
-        </form>
-    </div>
+        <!-- Section D -->
+        <div class="section mb-8" id="sectionD">
+            <h2 class="text-2xl font-semibold mb-4">Section D - In carrying out my day-to-day work:</h2>
+            <form id="formD" class="space-y-4">
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="D1" class="mr-2 rounded border-gray-300" onchange="validateSection('formD')"> I am keen to see there is nothing vague about my task and objectives.
+                        <input type="number" name="pointsD1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="D2" class="mr-2 rounded border-gray-300" onchange="validateSection('formD')"> I am not reluctant to emphasise my own point of view in meetings.
+                        <input type="number" name="pointsD2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="D3" class="mr-2 rounded border-gray-300" onchange="validateSection('formD')"> I can work with all sorts of people provided that they have got something worthwhile to contribute.
+                        <input type="number" name="pointsD3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="D4" class="mr-2 rounded border-gray-300" onchange="validateSection('formD')"> I make a point of following up interesting ideas and/or people.
+                        <input type="number" name="pointsD4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="D5" class="mr-2 rounded border-gray-300" onchange="validateSection('formD')"> I can usually find the argument to refute unsound propositions.
+                        <input type="number" name="pointsD5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="D6" class="mr-2 rounded border-gray-300" onchange="validateSection('formD')"> I tend to see patterns where others would see items as unconnected.
+                        <input type="number" name="pointsD6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="D7" class="mr-2 rounded border-gray-300" onchange="validateSection('formD')"> Being busy gives me real satisfaction.
+                        <input type="number" name="pointsD7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="D8" class="mr-2 rounded border-gray-300" onchange="validateSection('formD')"> I have a quiet interest in getting to know people better.
+                        <input type="number" name="pointsD8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+            </form>
+        </div>
 
-    <div class="section" id="sectionE">
-        <h2>Section E - If I am suddenly given a difficult task with limited time & unfamiliar people:</h2>
-        <form id="formE">
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="E1"> I often find my imagination frustrated by working in a group.
-                    <input type="number" name="pointsE1" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="E2"> I find my personal skill particularly appropriate in achieving agreement.
-                    <input type="number" name="pointsE2" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="E3"> My feelings seldom interfere with my judgment.
-                    <input type="number" name="pointsE3" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="E4"> I strive to build up an effective structure.
-                    <input type="number" name="pointsE4" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="E5"> I can work with people who vary widely in their personal qualities and outlook.
-                    <input type="number" name="pointsE5" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="E6"> I feel it is sometimes worth incurring some temporary unpopularity if one is to succeed in getting one's views across in a group.
-                    <input type="number" name="pointsE6" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="E7"> I usually know someone whose specialist knowledge is particularly apt.
-                    <input type="number" name="pointsE7" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="E8"> I seem to develop a natural sense of urgency.
-                    <input type="number" name="pointsE8" min="0" max="10">
-                </label>
-            </div>
-        </form>
-    </div>
+        <!-- Section E -->
+        <div class="section mb-8" id="sectionE">
+            <h2 class="text-2xl font-semibold mb-4">Section E - If I am suddenly given a difficult task with limited time & unfamiliar people:</h2>
+            <form id="formE" class="space-y-4">
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="E1" class="mr-2 rounded border-gray-300" onchange="validateSection('formE')"> I often find my imagination frustrated by working in a group.
+                        <input type="number" name="pointsE1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="E2" class="mr-2 rounded border-gray-300" onchange="validateSection('formE')"> I find my personal skill particularly appropriate in achieving agreement.
+                        <input type="number" name="pointsE2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="E3" class="mr-2 rounded border-gray-300" onchange="validateSection('formE')"> My feelings seldom interfere with my judgment.
+                        <input type="number" name="pointsE3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="E4" class="mr-2 rounded border-gray-300" onchange="validateSection('formE')"> I strive to build up an effective structure.
+                        <input type="number" name="pointsE4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="E5" class="mr-2 rounded border-gray-300" onchange="validateSection('formE')"> I can work with people who vary widely in their personal qualities and outlook.
+                        <input type="number" name="pointsE5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="E6" class="mr-2 rounded border-gray-300" onchange="validateSection('formE')"> I feel it is sometimes worth incurring some temporary unpopularity if one is to succeed in getting one's views across in a group.
+                        <input type="number" name="pointsE6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="E7" class="mr-2 rounded border-gray-300" onchange="validateSection('formE')"> I usually know someone whose specialist knowledge is particularly apt.
+                        <input type="number" name="pointsE7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="E8" class="mr-2 rounded border-gray-300" onchange="validateSection('formE')"> I seem to develop a natural sense of urgency.
+                        <input type="number" name="pointsE8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+            </form>
+        </div>
 
-    <div class="section" id="sectionF">
-        <h2>Section F - When suddenly asked to consider a new project:</h2>
-        <form id="formF">
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="F1"> I start to look around for possible ideas and openings.
-                    <input type="number" name="pointsF1" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="F2"> I am concerned to finish and perfect current work before I start.
-                    <input type="number" name="pointsF2" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="F3"> I approach the problem in a carefully analytical way.
-                    <input type="number" name="pointsF3" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="F4"> I am able to assert myself to get other people involved if necessary.
-                    <input type="number" name="pointsF4" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="F5"> I am able to take an independent and innovative look at most situations.
-                    <input type="number" name="pointsF5" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="F6"> I am happy to take the lead when action is required.
-                    <input type="number" name="pointsF6" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="F7"> I can respond positively to my colleagues and their initiatives.
-                    <input type="number" name="pointsF7" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="F8"> I find it hard to give in a job where the goals are not clearly defined.
-                    <input type="number" name="pointsF8" min="0" max="10">
-                </label>
-            </div>
-        </form>
-    </div>
+        <!-- Section F -->
+        <div class="section mb-8" id="sectionF">
+            <h2 class="text-2xl font-semibold mb-4">Section F - When suddenly asked to consider a new project:</h2>
+            <form id="formF" class="space-y-4">
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="F1" class="mr-2 rounded border-gray-300" onchange="validateSection('formF')"> I start to look around for possible ideas and openings.
+                        <input type="number" name="pointsF1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="F2" class="mr-2 rounded border-gray-300" onchange="validateSection('formF')"> I am concerned to finish and perfect current work before I start.
+                        <input type="number" name="pointsF2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="F3" class="mr-2 rounded border-gray-300" onchange="validateSection('formF')"> I approach the problem in a carefully analytical way.
+                        <input type="number" name="pointsF3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="F4" class="mr-2 rounded border-gray-300" onchange="validateSection('formF')"> I am able to assert myself to get other people involved if necessary.
+                        <input type="number" name="pointsF4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="F5" class="mr-2 rounded border-gray-300" onchange="validateSection('formF')"> I am able to take an independent and innovative look at most situations.
+                        <input type="number" name="pointsF5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="F6" class="mr-2 rounded border-gray-300" onchange="validateSection('formF')"> I am happy to take the lead when action is required.
+                        <input type="number" name="pointsF6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="F7" class="mr-2 rounded border-gray-300" onchange="validateSection('formF')"> I can respond positively to my colleagues and their initiatives.
+                        <input type="number" name="pointsF7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="F8" class="mr-2 rounded border-gray-300" onchange="validateSection('formF')"> I find it hard to give in a job where the goals are not clearly defined.
+                        <input type="number" name="pointsF8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+            </form>
+        </div>
 
-    <div class="section" id="sectionG">
-        <h2>Section G - In contributing to group projects in general:</h2>
-        <form id="formG">
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="G1"> I think I have a talent for sorting out the concrete steps that need to be taken given a broad brief.
-                    <input type="number" name="pointsG1" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="G2"> My considered judgement may take time but is usually near the mark.
-                    <input type="number" name="pointsG2" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="G3"> A broad range of personal contacts is important to my style of working.
-                    <input type="number" name="pointsG3" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="G4"> I have an eye for getting the details right.
-                    <input type="number" name="pointsG4" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="G5"> I try to make my mark in group meetings.
-                    <input type="number" name="pointsG5" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="G6"> I can see how ideas and techniques can be used in new relationships.
-                    <input type="number" name="pointsG6" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="G7"> I see both sides of a problem and take a decision acceptable to all.
-                    <input type="number" name="pointsG7" min="0" max="10">
-                </label>
-            </div>
-            <div class="question">
-                <label>
-                    <input type="checkbox" name="G8"> I get on well with others and work hard for the team.
-                    <input type="number" name="pointsG8" min="0" max="10">
-                </label>
-            </div>
-        </form>
-    </div>
+        <!-- Section G -->
+        <div class="section mb-8" id="sectionG">
+            <h2 class="text-2xl font-semibold mb-4">Section G - In contributing to group projects in general:</h2>
+            <form id="formG" class="space-y-4">
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="G1" class="mr-2 rounded border-gray-300" onchange="validateSection('formG')"> I think I have a talent for sorting out the concrete steps that need to be taken given a broad brief.
+                        <input type="number" name="pointsG1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="G2" class="mr-2 rounded border-gray-300" onchange="validateSection('formG')"> My considered judgement may take time but is usually near the mark.
+                        <input type="number" name="pointsG2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="G3" class="mr-2 rounded border-gray-300" onchange="validateSection('formG')"> A broad range of personal contacts is important to my style of working.
+                        <input type="number" name="pointsG3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="G4" class="mr-2 rounded border-gray-300" onchange="validateSection('formG')"> I have an eye for getting the details right.
+                        <input type="number" name="pointsG4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="G5" class="mr-2 rounded border-gray-300" onchange="validateSection('formG')"> I try to make my mark in group meetings.
+                        <input type="number" name="pointsG5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="G6" class="mr-2 rounded border-gray-300" onchange="validateSection('formG')"> I can see how ideas and techniques can be used in new relationships.
+                        <input type="number" name="pointsG6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="G7" class="mr-2 rounded border-gray-300" onchange="validateSection('formG')"> I see both sides of a problem and take a decision acceptable to all.
+                        <input type="number" name="pointsG7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+                <div class="question">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="G8" class="mr-2 rounded border-gray-300" onchange="validateSection('formG')"> I get on well with others and work hard for the team.
+                        <input type="number" name="pointsG8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300" disabled>
+                    </label>
+                </div>
+            </form>
+        </div>
 
-    <button onclick="calculateScores()">Calculate Scores</button>
+        <button onclick="calculateScores()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Calculate Scores</button>
 
-    <div class="section" id="results">
-        <h2>Scoring Table</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Role</th>
-                    <th>SH</th>
-                    <th>CO</th>
-                    <th>PL</th>
-                    <th>RI</th>
-                    <th>ME</th>
-                    <th>IM</th>
-                    <th>TW</th>
-                    <th>CF</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Section A</td>
-                    <td id="scoreA_SH"></td>
-                    <td id="scoreA_CO"></td>
-                    <td id="scoreA_PL"></td>
-                    <td id="scoreA_RI"></td>
-                    <td id="scoreA_ME"></td>
-                    <td id="scoreA_IM"></td>
-                    <td id="scoreA_TW"></td>
-                    <td id="scoreA_CF"></td>
-                </tr>
-                <tr>
-                    <td>Section B</td>
-                    <td id="scoreB_SH"></td>
-                    <td id="scoreB_CO"></td>
-                    <td id="scoreB_PL"></td>
-                    <td id="scoreB_RI"></td>
-                    <td id="scoreB_ME"></td>
-                    <td id="scoreB_IM"></td>
-                    <td id="scoreB_TW"></td>
-                    <td id="scoreB_CF"></td>
-                </tr>
-                <tr>
-                    <td>Section C</td>
-                    <td id="scoreC_SH"></td>
-                    <td id="scoreC_CO"></td>
-                    <td id="scoreC_PL"></td>
-                    <td id="scoreC_RI"></td>
-                    <td id="scoreC_ME"></td>
-                    <td id="scoreC_IM"></td>
-                    <td id="scoreC_TW"></td>
-                    <td id="scoreC_CF"></td>
-                </tr>
-                <tr>
-                    <td>Section D</td>
-                    <td id="scoreD_SH"></td>
-                    <td id="scoreD_CO"></td>
-                    <td id="scoreD_PL"></td>
-                    <td id="scoreD_RI"></td>
-                    <td id="scoreD_ME"></td>
-                    <td id="scoreD_IM"></td>
-                    <td id="scoreD_TW"></td>
-                    <td id="scoreD_CF"></td>
-                </tr>
-                <tr>
-                    <td>Section E</td>
-                    <td id="scoreE_SH"></td>
-                    <td id="scoreE_CO"></td>
-                    <td id="scoreE_PL"></td>
-                    <td id="scoreE_RI"></td>
-                    <td id="scoreE_ME"></td>
-                    <td id="scoreE_IM"></td>
-                    <td id="scoreE_TW"></td>
-                    <td id="scoreE_CF"></td>
-                </tr>
-                <tr>
-                    <td>Section F</td>
-                    <td id="scoreF_SH"></td>
-                    <td id="scoreF_CO"></td>
-                    <td id="scoreF_PL"></td>
-                    <td id="scoreF_RI"></td>
-                    <td id="scoreF_ME"></td>
-                    <td id="scoreF_IM"></td>
-                    <td id="scoreF_TW"></td>
-                    <td id="scoreF_CF"></td>
-                </tr>
-                <tr>
-                    <td>Section G</td>
-                    <td id="scoreG_SH"></td>
-                    <td id="scoreG_CO"></td>
-                    <td id="scoreG_PL"></td>
-                    <td id="scoreG_RI"></td>
-                    <td id="scoreG_ME"></td>
-                    <td id="scoreG_IM"></td>
-                    <td id="scoreG_TW"></td>
-                    <td id="scoreG_CF"></td>
-                </tr>
-            </tbody>
-            <tfoot>
-                <tr>
-                    <td>Total</td>
-                    <td id="total_SH"></td>
-                    <td id="total_CO"></td>
-                    <td id="total_PL"></td>
-                    <td id="total_RI"></td>
-                    <td id="total_ME"></td>
-                    <td id="total_IM"></td>
-                    <td id="total_TW"></td>
-                    <td id="total_CF"></td>
-                </tr>
-            </tfoot>
-        </table>
+        <div class="section mt-8 hidden" id="results">
+            <h2 class="text-2xl font-semibold mb-4">Scoring Table</h2>
+            <table class="w-full table-auto border-collapse">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="px-4 py-2">Role</th>
+                        <th class="px-4 py-2">SH</th>
+                        <th class="px-4 py-2">CO</th>
+                        <th class="px-4 py-2">PL</th>
+                        <th class="px-4 py-2">RI</th>
+                        <th class="px-4 py-2">ME</th>
+                        <th class="px-4 py-2">IM</th>
+                        <th class="px-4 py-2">TW</th>
+                        <th class="px-4 py-2">CF</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="border px-4 py-2">Section A</td>
+                        <td id="scoreA_SH" class="border px-4 py-2"></td>
+                        <td id="scoreA_CO" class="border px-4 py-2"></td>
+                        <td id="scoreA_PL" class="border px-4 py-2"></td>
+                        <td id="scoreA_RI" class="border px-4 py-2"></td>
+                        <td id="scoreA_ME" class="border px-4 py-2"></td>
+                        <td id="scoreA_IM" class="border px-4 py-2"></td>
+                        <td id="scoreA_TW" class="border px-4 py-2"></td>
+                        <td id="scoreA_CF" class="border px-4 py-2"></td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Section B</td>
+                        <td id="scoreB_SH" class="border px-4 py-2"></td>
+                        <td id="scoreB_CO" class="border px-4 py-2"></td>
+                        <td id="scoreB_PL" class="border px-4 py-2"></td>
+                        <td id="scoreB_RI" class="border px-4 py-2"></td>
+                        <td id="scoreB_ME" class="border px-4 py-2"></td>
+                        <td id="scoreB_IM" class="border px-4 py-2"></td>
+                        <td id="scoreB_TW" class="border px-4 py-2"></td>
+                        <td id="scoreB_CF" class="border px-4 py-2"></td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Section C</td>
+                        <td id="scoreC_SH" class="border px-4 py-2"></td>
+                        <td id="scoreC_CO" class="border px-4 py-2"></td>
+                        <td id="scoreC_PL" class="border px-4 py-2"></td>
+                        <td id="scoreC_RI" class="border px-4 py-2"></td>
+                        <td id="scoreC_ME" class="border px-4 py-2"></td>
+                        <td id="scoreC_IM" class="border px-4 py-2"></td>
+                        <td id="scoreC_TW" class="border px-4 py-2"></td>
+                        <td id="scoreC_CF" class="border px-4 py-2"></td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Section D</td>
+                        <td id="scoreD_SH" class="border px-4 py-2"></td>
+                        <td id="scoreD_CO" class="border px-4 py-2"></td>
+                        <td id="scoreD_PL" class="border px-4 py-2"></td>
+                        <td id="scoreD_RI" class="border px-4 py-2"></td>
+                        <td id="scoreD_ME" class="border px-4 py-2"></td>
+                        <td id="scoreD_IM" class="border px-4 py-2"></td>
+                        <td id="scoreD_TW" class="border px-4 py-2"></td>
+                        <td id="scoreD_CF" class="border px-4 py-2"></td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Section E</td>
+                        <td id="scoreE_SH" class="border px-4 py-2"></td>
+                        <td id="scoreE_CO" class="border px-4 py-2"></td>
+                        <td id="scoreE_PL" class="border px-4 py-2"></td>
+                        <td id="scoreE_RI" class="border px-4 py-2"></td>
+                        <td id="scoreE_ME" class="border px-4 py-2"></td>
+                        <td id="scoreE_IM" class="border px-4 py-2"></td>
+                        <td id="scoreE_TW" class="border px-4 py-2"></td>
+                        <td id="scoreE_CF" class="border px-4 py-2"></td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Section F</td>
+                        <td id="scoreF_SH" class="border px-4 py-2"></td>
+                        <td id="scoreF_CO" class="border px-4 py-2"></td>
+                        <td id="scoreF_PL" class="border px-4 py-2"></td>
+                        <td id="scoreF_RI" class="border px-4 py-2"></td>
+                        <td id="scoreF_ME" class="border px-4 py-2"></td>
+                        <td id="scoreF_IM" class="border px-4 py-2"></td>
+                        <td id="scoreF_TW" class="border px-4 py-2"></td>
+                        <td id="scoreF_CF" class="border px-4 py-2"></td>
+                    </tr>
+                    <tr>
+                        <td class="border px-4 py-2">Section G</td>
+                        <td id="scoreG_SH" class="border px-4 py-2"></td>
+                        <td id="scoreG_CO" class="border px-4 py-2"></td>
+                        <td id="scoreG_PL" class="border px-4 py-2"></td>
+                        <td id="scoreG_RI" class="border px-4 py-2"></td>
+                        <td id="scoreG_ME" class="border px-4 py-2"></td>
+                        <td id="scoreG_IM" class="border px-4 py-2"></td>
+                        <td id="scoreG_TW" class="border px-4 py-2"></td>
+                        <td id="scoreG_CF" class="border px-4 py-2"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="bg-gray-200">
+                        <td class="border px-4 py-2">Total</td>
+                        <td id="total_SH" class="border px-4 py-2"></td>
+                        <td id="total_CO" class="border px-4 py-2"></td>
+                        <td id="total_PL" class="border px-4 py-2"></td>
+                        <td id="total_RI" class="border px-4 py-2"></td>
+                        <td id="total_ME" class="border px-4 py-2"></td>
+                        <td id="total_IM" class="border px-4 py-2"></td>
+                        <td id="total_TW" class="border px-4 py-2"></td>
+                        <td id="total_CF" class="border px-4 py-2"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="section mt-8 hidden" id="profile">
+            <h2 class="text-2xl font-semibold mb-4">Profile Conclusion</h2>
+            <div id="profileConclusion" class="p-4 bg-gray-100 rounded shadow"></div>
+        </div>
     </div>
 
     <script>
+        function validateSection(formId) {
+            const form = document.getElementById(formId);
+            const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+            const inputs = form.querySelectorAll('input[type="number"]');
+
+            checkboxes.forEach((checkbox, index) => {
+                inputs[index].disabled = !checkbox.checked;
+                if (!checkbox.checked) {
+                    inputs[index].value = '';
+                }
+            });
+        }
+
         function calculateScores() {
             // Initialize scores
             const scores = {
@@ -521,11 +542,19 @@
             function processForm(formId, roleMappings) {
                 const form = document.getElementById(formId);
                 const formData = new FormData(form);
+                let pointsSum = 0;
                 for (const [role, questionNumbers] of Object.entries(roleMappings)) {
                     questionNumbers.forEach(number => {
-                        scores[role] += Number(formData.get(`points${formId.charAt(formId.length - 1)}${number}`)) || 0;
+                        const points = Number(formData.get(`points${formId.charAt(formId.length - 1)}${number}`)) || 0;
+                        scores[role] += points;
+                        pointsSum += points;
                     });
                 }
+                if (pointsSum !== 10) {
+                    alert(`Please ensure that the total points allocated in each section add up to 10.`);
+                    return false;
+                }
+                return true;
             }
 
             // Define role mappings for each section
@@ -539,14 +568,13 @@
                 G: { SH: [5], CO: [7], PL: [6], RI: [3], ME: [2], IM: [1], TW: [8], CF: [4] }
             };
 
-            // Process each form
-            processForm('formA', roleMappings.A);
-            processForm('formB', roleMappings.B);
-            processForm('formC', roleMappings.C);
-            processForm('formD', roleMappings.D);
-            processForm('formE', roleMappings.E);
-            processForm('formF', roleMappings.F);
-            processForm('formG', roleMappings.G);
+            // Process each form and validate
+            const forms = ['formA', 'formB', 'formC', 'formD', 'formE', 'formF', 'formG'];
+            for (const formId of forms) {
+                if (!processForm(formId, roleMappings[formId.charAt(formId.length - 1)])) {
+                    return;
+                }
+            }
 
             // Update scoring table
             for (const [role, total] of Object.entries(scores)) {
@@ -568,6 +596,33 @@
             updateSectionScores('formE', roleMappings.E);
             updateSectionScores('formF', roleMappings.F);
             updateSectionScores('formG', roleMappings.G);
+
+            // Generate profile conclusion
+            const profileConclusion = document.getElementById('profileConclusion');
+            const rolesDescription = {
+                SH: 'Shaper: Highly motivated, outgoing, dynamic. Thrive on pressure and confrontation. Strengths: Drive, readiness to challenge. Weaknesses: Prone to provocation, irritation, impatience.',
+                CO: 'Coordinator: Calm, self-confident, controlled. Good at delegating and achieving shared goals. Strengths: Welcome all contributors, main objective focus. Weaknesses: No intellectual or creative pretensions.',
+                PL: 'Plant: Innovative, creative, unorthodox. Generate new ideas and solve complex problems. Strengths: Genius, imagination, intellect, knowledge. Weaknesses: Disregard practical details or protocol.',
+                RI: 'Resource Investigator: Extroverted, enthusiastic, communicative. Develop contacts and explore opportunities. Strengths: Find useful people and ideas. Weaknesses: Lose interest quickly.',
+                ME: 'Monitor Evaluator: Sober, unemotional, prudent. Make shrewd judgements and evaluations. Strengths: Judgement, discretion, hard-headedness. Weaknesses: Lack inspiration or ability to motivate others.',
+                IM: 'Implementer: Well-organized, practical, disciplined. Reliable and efficient in application. Strengths: Organizing ability, practical common sense, hard working. Weaknesses: Lack of flexibility, resistance to unproven ideas.',
+                TW: 'Team Worker: Socially oriented, mild, sensitive. Support team members and avoid friction. Strengths: Promote team spirit, respond to people and situations. Weaknesses: Indecision at moments of crisis.',
+                CF: 'Completer-Finisher: Painstaking, orderly, conscientious, anxious. Attention to detail and follow-through. Strengths: Fulfilling promises, high standards. Weaknesses: Worry about small things, reluctance to delegate.'
+            };
+
+            const primaryRole = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+            const secondaryRole = Object.keys(scores).filter(role => role !== primaryRole).reduce((a, b) => scores[a] > scores[b] ? a : b);
+
+            profileConclusion.innerHTML = `
+                <p class="mb-4">Your primary role is: <strong>${primaryRole}</strong></p>
+                <p class="mb-4">${rolesDescription[primaryRole]}</p>
+                <p class="mb-4">Your secondary role is: <strong>${secondaryRole}</strong></p>
+                <p>${rolesDescription[secondaryRole]}</p>
+            `;
+
+            // Show results and profile sections
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('profile').classList.remove('hidden');
         }
     </script>
 </body>
