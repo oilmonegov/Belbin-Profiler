@@ -1,24 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Belbin Team Roles Questionnaire - By Chuks Abanum</title>
+    <title>Belbin Team Roles Questionnaire - by Chuks Abanum</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .hidden { display: none; }
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .hidden {
+            display: none;
+        }
+
         .switch {
             position: relative;
             display: inline-block;
             width: 40px;
             height: 20px;
         }
+
         .switch input {
             opacity: 0;
             width: 0;
             height: 0;
         }
+
         .slider {
             position: absolute;
             cursor: pointer;
@@ -30,6 +39,7 @@
             transition: .4s;
             border-radius: 20px;
         }
+
         .slider:before {
             position: absolute;
             content: "";
@@ -41,759 +51,893 @@
             transition: .4s;
             border-radius: 50%;
         }
-        input:checked + .slider {
+
+        input:checked+.slider {
             background-color: #2196F3;
         }
-        input:checked + .slider:before {
+
+        input:checked+.slider:before {
             transform: translateX(20px);
         }
     </style>
 </head>
+
 <body class="bg-gray-100 text-gray-800">
     <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-        <h1 class="text-3xl font-bold text-center mb-8">Belbin Team Roles Questionnaire</h1>
+        <nav class="mb-8">
+            <ul class="flex space-x-4">
+                <li><a href="#instructions" class="text-blue-500 hover:underline">Instructions</a></li>
+                <li><a href="#questionnaire" class="text-blue-500 hover:underline">Questionnaire</a></li>
+                <li><a href="#understanding-profile" class="text-blue-500 hover:underline">Understanding Your
+                        Profile</a></li>
+            </ul>
+        </nav>
 
-        <hr>
+        <div id="instructions" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4 mt-4">Belbin Team Roles Self Perception Inventory</h2>
+            <p class="text-md mb-8">
+                To complete each section of this questionnaire, tick in the far left hand column the one, two, or three
+                sentences most applicable to yourself. Then in the column on the right, apportion 10 points between
+                those sentences that apply to you: one of which you feel sums you up well while the other only applies
+                some of the time.
+            </p>
+            <p class="text-md mb-8">
+                In this instance you could give your first choice seven points and the remaining points to your second
+                choice. In some instances you might decide that there are two sentences that apply to you equally - if
+                this is the case, award five points to each.
+            </p>
+            <p class="text-md mb-8 font-semibold">You must allocate all 10 points in each section.</p>
 
-        <h2 class="text-2xl font-semibold mb-4 mt-4">Belbin Team Roles Self Perception Inventory</h2>
-        <p class="text-md mb-8">
-            To complete each section of this questionnaire, tick in the far left hand column the one, two, or three sentences most applicable to yourself. Then in the column on the right, apportion 10 points between those sentences that apply to you: one of which you feel sums you up well while the other only applies some of the time.
-        </p>
-        <p class="text-md mb-8">
-            In this instance you could give your first choice seven points and the remaining points to your second choice. In some instances you might decide that there are two sentences that apply to you equally - if this is the case, award five points to each.
-        </p>
-        <p class="text-md mb-8 font-semibold">You must allocate all 10 points in each section.</p>
-
-        <!-- Section A -->
-        <div class="section mb-8" id="sectionA">
-            <h2 class="text-2xl font-semibold mb-4">Section A - When involved in a project with other people:</h2>
-            <form id="formA" class="space-y-4">
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="A1" onchange="validateSection('formA')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I can be relied upon to see that work that needs to be done is organised.</span>
-                        <input type="number" name="pointsA1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="A2" onchange="validateSection('formA')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I pick up slips and omissions that others fail to notice.</span>
-                        <input type="number" name="pointsA2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="A3" onchange="validateSection('formA')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I react strongly when meetings look like losing track of the main objective.</span>
-                        <input type="number" name="pointsA3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="A4" onchange="validateSection('formA')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I produce original suggestions.</span>
-                        <input type="number" name="pointsA4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="A5" onchange="validateSection('formA')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I analyse other people's ideas objectively, for both merits and failings.</span>
-                        <input type="number" name="pointsA5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="A6" onchange="validateSection('formA')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I am keen to find out the latest ideas and developments.</span>
-                        <input type="number" name="pointsA6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="A7" onchange="validateSection('formA')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I have an aptitude for organising people.</span>
-                        <input type="number" name="pointsA7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="A8" onchange="validateSection('formA')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I am always ready to support good suggestions that help to resolve a problem.</span>
-                        <input type="number" name="pointsA8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-            </form>
         </div>
 
-        <!-- Section B -->
-        <div class="section mb-8" id="sectionB">
-            <h2 class="text-2xl font-semibold mb-4">Section B - In seeking satisfaction through my work:</h2>
-            <form id="formB" class="space-y-4">
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="B1" onchange="validateSection('formB')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I like to have a strong influence on decisions.</span>
-                        <input type="number" name="pointsB1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="B2" onchange="validateSection('formB')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I feel in my element where work requires a high degree of attention & concentration.</span>
-                        <input type="number" name="pointsB2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="B3" onchange="validateSection('formB')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I am concerned to help colleagues with their problems.</span>
-                        <input type="number" name="pointsB3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="B4" onchange="validateSection('formB')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I like to make critical discrimination between alternatives.</span>
-                        <input type="number" name="pointsB4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="B5" onchange="validateSection('formB')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I tend to have a creative approach to problem solving.</span>
-                        <input type="number" name="pointsB5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="B6" onchange="validateSection('formB')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I enjoy reconciling different points of view.</span>
-                        <input type="number" name="pointsB6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="B7" onchange="validateSection('formB')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I am more interested in practicalities than new ideas.</span>
-                        <input type="number" name="pointsB7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="B8" onchange="validateSection('formB')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I particularly enjoy exploring different views and techniques.</span>
-                        <input type="number" name="pointsB8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-            </form>
+        <div id="questionnaire">
+            <!-- Section A -->
+            <div class="section mb-8" id="sectionA">
+                <h2 class="text-2xl font-semibold mb-4">Section A - When involved in a project with other people:</h2>
+                <form id="formA" class="space-y-4">
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="A1" onchange="validateSection('formA')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I can be relied upon to see that work that needs to be done is
+                                organised.</span>
+                            <input type="number" name="pointsA1" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="A2" onchange="validateSection('formA')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I pick up slips and omissions that others fail to notice.</span>
+                            <input type="number" name="pointsA2" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="A3" onchange="validateSection('formA')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I react strongly when meetings look like losing track of the main
+                                objective.</span>
+                            <input type="number" name="pointsA3" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="A4" onchange="validateSection('formA')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I produce original suggestions.</span>
+                            <input type="number" name="pointsA4" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="A5" onchange="validateSection('formA')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I analyse other people's ideas objectively, for both merits and
+                                failings.</span>
+                            <input type="number" name="pointsA5" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="A6" onchange="validateSection('formA')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I am keen to find out the latest ideas and developments.</span>
+                            <input type="number" name="pointsA6" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="A7" onchange="validateSection('formA')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I have an aptitude for organising people.</span>
+                            <input type="number" name="pointsA7" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="A8" onchange="validateSection('formA')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I am always ready to support good suggestions that help to resolve a
+                                problem.</span>
+                            <input type="number" name="pointsA8" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Section B -->
+            <div class="section mb-8" id="sectionB">
+                <h2 class="text-2xl font-semibold mb-4">Section B - In seeking satisfaction through my work:</h2>
+                <form id="formB" class="space-y-4">
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="B1" onchange="validateSection('formB')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I like to have a strong influence on decisions.</span>
+                            <input type="number" name="pointsB1" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="B2" onchange="validateSection('formB')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I feel in my element where work requires a high degree of attention &
+                                concentration.</span>
+                            <input type="number" name="pointsB2" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="B3" onchange="validateSection('formB')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I am concerned to help colleagues with their problems.</span>
+                            <input type="number" name="pointsB3" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="B4" onchange="validateSection('formB')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I like to make critical discrimination between alternatives.</span>
+                            <input type="number" name="pointsB4" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="B5" onchange="validateSection('formB')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I tend to have a creative approach to problem solving.</span>
+                            <input type="number" name="pointsB5" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="B6" onchange="validateSection('formB')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I enjoy reconciling different points of view.</span>
+                            <input type="number" name="pointsB6" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="B7" onchange="validateSection('formB')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I am more interested in practicalities than new ideas.</span>
+                            <input type="number" name="pointsB7" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="B8" onchange="validateSection('formB')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I particularly enjoy exploring different views and techniques.</span>
+                            <input type="number" name="pointsB8" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Section C -->
+            <div class="section mb-8" id="sectionC">
+                <h2 class="text-2xl font-semibold mb-4">Section C - When the team is trying to solve a particularly
+                    complex problem:</h2>
+                <form id="formC" class="space-y-4">
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="C1" onchange="validateSection('formC')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I keep a watching eye on areas where difficulty may arise.</span>
+                            <input type="number" name="pointsC1" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="C2" onchange="validateSection('formC')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I explore ideas that may have a wider application than in the immediate
+                                task.</span>
+                            <input type="number" name="pointsC2" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="C3" onchange="validateSection('formC')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I like to weigh up and evaluate a range of suggestions thoroughly before
+                                choosing.</span>
+                            <input type="number" name="pointsC3" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="C4" onchange="validateSection('formC')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I can co-ordinate and use productively other people's abilities and
+                                talents.</span>
+                            <input type="number" name="pointsC4" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="C5" onchange="validateSection('formC')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I maintain a steady systematic approach, whatever the pressures.</span>
+                            <input type="number" name="pointsC5" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="C6" onchange="validateSection('formC')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I often produce a new approach to a long continuing problem.</span>
+                            <input type="number" name="pointsC6" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="C7" onchange="validateSection('formC')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I am ready to make my personal views known in a forceful way if
+                                necessary.</span>
+                            <input type="number" name="pointsC7" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="C8" onchange="validateSection('formC')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I am ready to help whenever I can.</span>
+                            <input type="number" name="pointsC8" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Section D -->
+            <div class="section mb-8" id="sectionD">
+                <h2 class="text-2xl font-semibold mb-4">Section D - In carrying out my day-to-day work:</h2>
+                <form id="formD" class="space-y-4">
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="D1" onchange="validateSection('formD')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I am keen to see there is nothing vague about my task and
+                                objectives.</span>
+                            <input type="number" name="pointsD1" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="D2" onchange="validateSection('formD')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I am not reluctant to emphasise my own point of view in meetings.</span>
+                            <input type="number" name="pointsD2" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="D3" onchange="validateSection('formD')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I can work with all sorts of people provided that they have got something
+                                worthwhile to contribute.</span>
+                            <input type="number" name="pointsD3" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="D4" onchange="validateSection('formD')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I make a point of following up interesting ideas and/or people.</span>
+                            <input type="number" name="pointsD4" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="D5" onchange="validateSection('formD')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I can usually find the argument to refute unsound propositions.</span>
+                            <input type="number" name="pointsD5" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="D6" onchange="validateSection('formD')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I tend to see patterns where others would see items as
+                                unconnected.</span>
+                            <input type="number" name="pointsD6" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="D7" onchange="validateSection('formD')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">Being busy gives me real satisfaction.</span>
+                            <input type="number" name="pointsD7" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="D8" onchange="validateSection('formD')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I have a quiet interest in getting to know people better.</span>
+                            <input type="number" name="pointsD8" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Section E -->
+            <div class="section mb-8" id="sectionE">
+                <h2 class="text-2xl font-semibold mb-4">Section E - If I am suddenly given a difficult task with limited
+                    time & unfamiliar people:</h2>
+                <form id="formE" class="space-y-4">
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="E1" onchange="validateSection('formE')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I often find my imagination frustrated by working in a group.</span>
+                            <input type="number" name="pointsE1" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="E2" onchange="validateSection('formE')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I find my personal skill particularly appropriate in achieving
+                                agreement.</span>
+                            <input type="number" name="pointsE2" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="E3" onchange="validateSection('formE')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">My feelings seldom interfere with my judgment.</span>
+                            <input type="number" name="pointsE3" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="E4" onchange="validateSection('formE')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I strive to build up an effective structure.</span>
+                            <input type="number" name="pointsE4" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="E5" onchange="validateSection('formE')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I can work with people who vary widely in their personal qualities and
+                                outlook.</span>
+                            <input type="number" name="pointsE5" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="E6" onchange="validateSection('formE')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I feel it is sometimes worth incurring some temporary unpopularity if one
+                                is to succeed in getting one's views across in a group.</span>
+                            <input type="number" name="pointsE6" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="E7" onchange="validateSection('formE')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I usually know someone whose specialist knowledge is particularly
+                                apt.</span>
+                            <input type="number" name="pointsE7" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="E8" onchange="validateSection('formE')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I seem to develop a natural sense of urgency.</span>
+                            <input type="number" name="pointsE8" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Section F -->
+            <div class="section mb-8" id="sectionF">
+                <h2 class="text-2xl font-semibold mb-4">Section F - When suddenly asked to consider a new project:</h2>
+                <form id="formF" class="space-y-4">
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="F1" onchange="validateSection('formF')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I start to look around for possible ideas and openings.</span>
+                            <input type="number" name="pointsF1" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="F2" onchange="validateSection('formF')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I am concerned to finish and perfect current work before I start.</span>
+                            <input type="number" name="pointsF2" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="F3" onchange="validateSection('formF')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I approach the problem in a carefully analytical way.</span>
+                            <input type="number" name="pointsF3" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="F4" onchange="validateSection('formF')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I am able to assert myself to get other people involved if
+                                necessary.</span>
+                            <input type="number" name="pointsF4" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="F5" onchange="validateSection('formF')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I am able to take an independent and innovative look at most
+                                situations.</span>
+                            <input type="number" name="pointsF5" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="F6" onchange="validateSection('formF')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I am happy to take the lead when action is required.</span>
+                            <input type="number" name="pointsF6" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="F7" onchange="validateSection('formF')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I can respond positively to my colleagues and their initiatives.</span>
+                            <input type="number" name="pointsF7" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="F8" onchange="validateSection('formF')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I find it hard to give in a job where the goals are not clearly
+                                defined.</span>
+                            <input type="number" name="pointsF8" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Section G -->
+            <div class="section mb-8" id="sectionG">
+                <h2 class="text-2xl font-semibold mb-4">Section G - In contributing to group projects in general:</h2>
+                <form id="formG" class="space-y-4">
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="G1" onchange="validateSection('formG')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I think I have a talent for sorting out the concrete steps that need to
+                                be taken given a broad brief.</span>
+                            <input type="number" name="pointsG1" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="G2" onchange="validateSection('formG')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">My considered judgement may take time but is usually near the
+                                mark.</span>
+                            <input type="number" name="pointsG2" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="G3" onchange="validateSection('formG')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">A broad range of personal contacts is important to my style of
+                                working.</span>
+                            <input type="number" name="pointsG3" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="G4" onchange="validateSection('formG')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I have an eye for getting the details right.</span>
+                            <input type="number" name="pointsG4" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="G5" onchange="validateSection('formG')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I try to make my mark in group meetings.</span>
+                            <input type="number" name="pointsG5" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="G6" onchange="validateSection('formG')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I can see how ideas and techniques can be used in new
+                                relationships.</span>
+                            <input type="number" name="pointsG6" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="G7" onchange="validateSection('formG')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I see both sides of a problem and take a decision acceptable to
+                                all.</span>
+                            <input type="number" name="pointsG7" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="G8" onchange="validateSection('formG')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4">I get on well with others and work hard for the team.</span>
+                            <input type="number" name="pointsG8" min="0" max="10"
+                                class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <button onclick="calculateScores()"
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Calculate Scores</button>
+
+            <div class="section mt-8 hidden" id="results">
+                <h2 class="text-2xl font-semibold mb-4">Scoring Table</h2>
+                <table class="w-full table-auto border-collapse">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="px-4 py-2">Role</th>
+                            <th class="px-4 py-2">SH</th>
+                            <th class="px-4 py-2">CO</th>
+                            <th class="px-4 py-2">PL</th>
+                            <th class="px-4 py-2">RI</th>
+                            <th class="px-4 py-2">ME</th>
+                            <th class="px-4 py-2">IM</th>
+                            <th class="px-4 py-2">TW</th>
+                            <th class="px-4 py-2">CF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border px-4 py-2">Section A</td>
+                            <td id="scoreA_SH" class="border px-4 py-2"></td>
+                            <td id="scoreA_CO" class="border px-4 py-2"></td>
+                            <td id="scoreA_PL" class="border px-4 py-2"></td>
+                            <td id="scoreA_RI" class="border px-4 py-2"></td>
+                            <td id="scoreA_ME" class="border px-4 py-2"></td>
+                            <td id="scoreA_IM" class="border px-4 py-2"></td>
+                            <td id="scoreA_TW" class="border px-4 py-2"></td>
+                            <td id="scoreA_CF" class="border px-4 py-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Section B</td>
+                            <td id="scoreB_SH" class="border px-4 py-2"></td>
+                            <td id="scoreB_CO" class="border px-4 py-2"></td>
+                            <td id="scoreB_PL" class="border px-4 py-2"></td>
+                            <td id="scoreB_RI" class="border px-4 py-2"></td>
+                            <td id="scoreB_ME" class="border px-4 py-2"></td>
+                            <td id="scoreB_IM" class="border px-4 py-2"></td>
+                            <td id="scoreB_TW" class="border px-4 py-2"></td>
+                            <td id="scoreB_CF" class="border px-4 py-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Section C</td>
+                            <td id="scoreC_SH" class="border px-4 py-2"></td>
+                            <td id="scoreC_CO" class="border px-4 py-2"></td>
+                            <td id="scoreC_PL" class="border px-4 py-2"></td>
+                            <td id="scoreC_RI" class="border px-4 py-2"></td>
+                            <td id="scoreC_ME" class="border px-4 py-2"></td>
+                            <td id="scoreC_IM" class="border px-4 py-2"></td>
+                            <td id="scoreC_TW" class="border px-4 py-2"></td>
+                            <td id="scoreC_CF" class="border px-4 py-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Section D</td>
+                            <td id="scoreD_SH" class="border px-4 py-2"></td>
+                            <td id="scoreD_CO" class="border px-4 py-2"></td>
+                            <td id="scoreD_PL" class="border px-4 py-2"></td>
+                            <td id="scoreD_RI" class="border px-4 py-2"></td>
+                            <td id="scoreD_ME" class="border px-4 py-2"></td>
+                            <td id="scoreD_IM" class="border px-4 py-2"></td>
+                            <td id="scoreD_TW" class="border px-4 py-2"></td>
+                            <td id="scoreD_CF" class="border px-4 py-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Section E</td>
+                            <td id="scoreE_SH" class="border px-4 py-2"></td>
+                            <td id="scoreE_CO" class="border px-4 py-2"></td>
+                            <td id="scoreE_PL" class="border px-4 py-2"></td>
+                            <td id="scoreE_RI" class="border px-4 py-2"></td>
+                            <td id="scoreE_ME" class="border px-4 py-2"></td>
+                            <td id="scoreE_IM" class="border px-4 py-2"></td>
+                            <td id="scoreE_TW" class="border px-4 py-2"></td>
+                            <td id="scoreE_CF" class="border px-4 py-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Section F</td>
+                            <td id="scoreF_SH" class="border px-4 py-2"></td>
+                            <td id="scoreF_CO" class="border px-4 py-2"></td>
+                            <td id="scoreF_PL" class="border px-4 py-2"></td>
+                            <td id="scoreF_RI" class="border px-4 py-2"></td>
+                            <td id="scoreF_ME" class="border px-4 py-2"></td>
+                            <td id="scoreF_IM" class="border px-4 py-2"></td>
+                            <td id="scoreF_TW" class="border px-4 py-2"></td>
+                            <td id="scoreF_CF" class="border px-4 py-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Section G</td>
+                            <td id="scoreG_SH" class="border px-4 py-2"></td>
+                            <td id="scoreG_CO" class="border px-4 py-2"></td>
+                            <td id="scoreG_PL" class="border px-4 py-2"></td>
+                            <td id="scoreG_RI" class="border px-4 py-2"></td>
+                            <td id="scoreG_ME" class="border px-4 py-2"></td>
+                            <td id="scoreG_IM" class="border px-4 py-2"></td>
+                            <td id="scoreG_TW" class="border px-4 py-2"></td>
+                            <td id="scoreG_CF" class="border px-4 py-2"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="bg-gray-200">
+                            <td class="border px-4 py-2">Total</td>
+                            <td id="total_SH" class="border px-4 py-2"></td>
+                            <td id="total_CO" class="border px-4 py-2"></td>
+                            <td id="total_PL" class="border px-4 py-2"></td>
+                            <td id="total_RI" class="border px-4 py-2"></td>
+                            <td id="total_ME" class="border px-4 py-2"></td>
+                            <td id="total_IM" class="border px-4 py-2"></td>
+                            <td id="total_TW" class="border px-4 py-2"></td>
+                            <td id="total_CF" class="border px-4 py-2"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div class="section mt-8 hidden" id="profile">
+                <h2 class="text-2xl font-semibold mb-4">Profile Conclusion</h2>
+                <div id="profileConclusion" class="p-4 bg-gray-100 rounded shadow"></div>
+            </div>
         </div>
 
-        <!-- Section C -->
-        <div class="section mb-8" id="sectionC">
-            <h2 class="text-2xl font-semibold mb-4">Section C - When the team is trying to solve a particularly complex problem:</h2>
-            <form id="formC" class="space-y-4">
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="C1" onchange="validateSection('formC')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I keep a watching eye on areas where difficulty may arise.</span>
-                        <input type="number" name="pointsC1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="C2" onchange="validateSection('formC')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I explore ideas that may have a wider application than in the immediate task.</span>
-                        <input type="number" name="pointsC2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="C3" onchange="validateSection('formC')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I like to weigh up and evaluate a range of suggestions thoroughly before choosing.</span>
-                        <input type="number" name="pointsC3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="C4" onchange="validateSection('formC')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I can co-ordinate and use productively other people's abilities and talents.</span>
-                        <input type="number" name="pointsC4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="C5" onchange="validateSection('formC')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I maintain a steady systematic approach, whatever the pressures.</span>
-                        <input type="number" name="pointsC5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="C6" onchange="validateSection('formC')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I often produce a new approach to a long continuing problem.</span>
-                        <input type="number" name="pointsC6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="C7" onchange="validateSection('formC')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I am ready to make my personal views known in a forceful way if necessary.</span>
-                        <input type="number" name="pointsC7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="C8" onchange="validateSection('formC')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I am ready to help whenever I can.</span>
-                        <input type="number" name="pointsC8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-            </form>
-        </div>
-
-        <!-- Section D -->
-        <div class="section mb-8" id="sectionD">
-            <h2 class="text-2xl font-semibold mb-4">Section D - In carrying out my day-to-day work:</h2>
-            <form id="formD" class="space-y-4">
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="D1" onchange="validateSection('formD')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I am keen to see there is nothing vague about my task and objectives.</span>
-                        <input type="number" name="pointsD1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="D2" onchange="validateSection('formD')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I am not reluctant to emphasise my own point of view in meetings.</span>
-                        <input type="number" name="pointsD2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="D3" onchange="validateSection('formD')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I can work with all sorts of people provided that they have got something worthwhile to contribute.</span>
-                        <input type="number" name="pointsD3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="D4" onchange="validateSection('formD')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I make a point of following up interesting ideas and/or people.</span>
-                        <input type="number" name="pointsD4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="D5" onchange="validateSection('formD')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I can usually find the argument to refute unsound propositions.</span>
-                        <input type="number" name="pointsD5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="D6" onchange="validateSection('formD')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I tend to see patterns where others would see items as unconnected.</span>
-                        <input type="number" name="pointsD6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="D7" onchange="validateSection('formD')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">Being busy gives me real satisfaction.</span>
-                        <input type="number" name="pointsD7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="D8" onchange="validateSection('formD')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I have a quiet interest in getting to know people better.</span>
-                        <input type="number" name="pointsD8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-            </form>
-        </div>
-
-        <!-- Section E -->
-        <div class="section mb-8" id="sectionE">
-            <h2 class="text-2xl font-semibold mb-4">Section E - If I am suddenly given a difficult task with limited time & unfamiliar people:</h2>
-            <form id="formE" class="space-y-4">
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="E1" onchange="validateSection('formE')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I often find my imagination frustrated by working in a group.</span>
-                        <input type="number" name="pointsE1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="E2" onchange="validateSection('formE')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I find my personal skill particularly appropriate in achieving agreement.</span>
-                        <input type="number" name="pointsE2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="E3" onchange="validateSection('formE')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">My feelings seldom interfere with my judgment.</span>
-                        <input type="number" name="pointsE3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="E4" onchange="validateSection('formE')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I strive to build up an effective structure.</span>
-                        <input type="number" name="pointsE4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="E5" onchange="validateSection('formE')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I can work with people who vary widely in their personal qualities and outlook.</span>
-                        <input type="number" name="pointsE5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="E6" onchange="validateSection('formE')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I feel it is sometimes worth incurring some temporary unpopularity if one is to succeed in getting one's views across in a group.</span>
-                        <input type="number" name="pointsE6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="E7" onchange="validateSection('formE')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I usually know someone whose specialist knowledge is particularly apt.</span>
-                        <input type="number" name="pointsE7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="E8" onchange="validateSection('formE')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I seem to develop a natural sense of urgency.</span>
-                        <input type="number" name="pointsE8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-            </form>
-        </div>
-
-        <!-- Section F -->
-        <div class="section mb-8" id="sectionF">
-            <h2 class="text-2xl font-semibold mb-4">Section F - When suddenly asked to consider a new project:</h2>
-            <form id="formF" class="space-y-4">
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="F1" onchange="validateSection('formF')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I start to look around for possible ideas and openings.</span>
-                        <input type="number" name="pointsF1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="F2" onchange="validateSection('formF')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I am concerned to finish and perfect current work before I start.</span>
-                        <input type="number" name="pointsF2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="F3" onchange="validateSection('formF')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I approach the problem in a carefully analytical way.</span>
-                        <input type="number" name="pointsF3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="F4" onchange="validateSection('formF')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I am able to assert myself to get other people involved if necessary.</span>
-                        <input type="number" name="pointsF4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="F5" onchange="validateSection('formF')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I am able to take an independent and innovative look at most situations.</span>
-                        <input type="number" name="pointsF5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="F6" onchange="validateSection('formF')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I am happy to take the lead when action is required.</span>
-                        <input type="number" name="pointsF6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="F7" onchange="validateSection('formF')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I can respond positively to my colleagues and their initiatives.</span>
-                        <input type="number" name="pointsF7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="F8" onchange="validateSection('formF')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I find it hard to give in a job where the goals are not clearly defined.</span>
-                        <input type="number" name="pointsF8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-            </form>
-        </div>
-
-        <!-- Section G -->
-        <div class="section mb-8" id="sectionG">
-            <h2 class="text-2xl font-semibold mb-4">Section G - In contributing to group projects in general:</h2>
-            <form id="formG" class="space-y-4">
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="G1" onchange="validateSection('formG')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I think I have a talent for sorting out the concrete steps that need to be taken given a broad brief.</span>
-                        <input type="number" name="pointsG1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="G2" onchange="validateSection('formG')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">My considered judgement may take time but is usually near the mark.</span>
-                        <input type="number" name="pointsG2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="G3" onchange="validateSection('formG')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">A broad range of personal contacts is important to my style of working.</span>
-                        <input type="number" name="pointsG3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="G4" onchange="validateSection('formG')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I have an eye for getting the details right.</span>
-                        <input type="number" name="pointsG4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="G5" onchange="validateSection('formG')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I try to make my mark in group meetings.</span>
-                        <input type="number" name="pointsG5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="G6" onchange="validateSection('formG')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I can see how ideas and techniques can be used in new relationships.</span>
-                        <input type="number" name="pointsG6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="G7" onchange="validateSection('formG')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I see both sides of a problem and take a decision acceptable to all.</span>
-                        <input type="number" name="pointsG7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-                <div class="question">
-                    <label class="flex items-center">
-                        <span class="switch">
-                            <input type="checkbox" name="G8" onchange="validateSection('formG')">
-                            <span class="slider"></span>
-                        </span>
-                        <span class="ml-4">I get on well with others and work hard for the team.</span>
-                        <input type="number" name="pointsG8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
-                    </label>
-                </div>
-            </form>
-        </div>
-
-        <button onclick="calculateScores()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Calculate Scores</button>
-
-        <div class="section mt-8 hidden" id="results">
-            <h2 class="text-2xl font-semibold mb-4">Scoring Table</h2>
-            <table class="w-full table-auto border-collapse">
-                <thead>
-                    <tr class="bg-gray-200">
-                        <th class="px-4 py-2">Role</th>
-                        <th class="px-4 py-2">SH</th>
-                        <th class="px-4 py-2">CO</th>
-                        <th class="px-4 py-2">PL</th>
-                        <th class="px-4 py-2">RI</th>
-                        <th class="px-4 py-2">ME</th>
-                        <th class="px-4 py-2">IM</th>
-                        <th class="px-4 py-2">TW</th>
-                        <th class="px-4 py-2">CF</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="border px-4 py-2">Section A</td>
-                        <td id="scoreA_SH" class="border px-4 py-2"></td>
-                        <td id="scoreA_CO" class="border px-4 py-2"></td>
-                        <td id="scoreA_PL" class="border px-4 py-2"></td>
-                        <td id="scoreA_RI" class="border px-4 py-2"></td>
-                        <td id="scoreA_ME" class="border px-4 py-2"></td>
-                        <td id="scoreA_IM" class="border px-4 py-2"></td>
-                        <td id="scoreA_TW" class="border px-4 py-2"></td>
-                        <td id="scoreA_CF" class="border px-4 py-2"></td>
-                    </tr>
-                    <tr>
-                        <td class="border px-4 py-2">Section B</td>
-                        <td id="scoreB_SH" class="border px-4 py-2"></td>
-                        <td id="scoreB_CO" class="border px-4 py-2"></td>
-                        <td id="scoreB_PL" class="border px-4 py-2"></td>
-                        <td id="scoreB_RI" class="border px-4 py-2"></td>
-                        <td id="scoreB_ME" class="border px-4 py-2"></td>
-                        <td id="scoreB_IM" class="border px-4 py-2"></td>
-                        <td id="scoreB_TW" class="border px-4 py-2"></td>
-                        <td id="scoreB_CF" class="border px-4 py-2"></td>
-                    </tr>
-                    <tr>
-                        <td class="border px-4 py-2">Section C</td>
-                        <td id="scoreC_SH" class="border px-4 py-2"></td>
-                        <td id="scoreC_CO" class="border px-4 py-2"></td>
-                        <td id="scoreC_PL" class="border px-4 py-2"></td>
-                        <td id="scoreC_RI" class="border px-4 py-2"></td>
-                        <td id="scoreC_ME" class="border px-4 py-2"></td>
-                        <td id="scoreC_IM" class="border px-4 py-2"></td>
-                        <td id="scoreC_TW" class="border px-4 py-2"></td>
-                        <td id="scoreC_CF" class="border px-4 py-2"></td>
-                    </tr>
-                    <tr>
-                        <td class="border px-4 py-2">Section D</td>
-                        <td id="scoreD_SH" class="border px-4 py-2"></td>
-                        <td id="scoreD_CO" class="border px-4 py-2"></td>
-                        <td id="scoreD_PL" class="border px-4 py-2"></td>
-                        <td id="scoreD_RI" class="border px-4 py-2"></td>
-                        <td id="scoreD_ME" class="border px-4 py-2"></td>
-                        <td id="scoreD_IM" class="border px-4 py-2"></td>
-                        <td id="scoreD_TW" class="border px-4 py-2"></td>
-                        <td id="scoreD_CF" class="border px-4 py-2"></td>
-                    </tr>
-                    <tr>
-                        <td class="border px-4 py-2">Section E</td>
-                        <td id="scoreE_SH" class="border px-4 py-2"></td>
-                        <td id="scoreE_CO" class="border px-4 py-2"></td>
-                        <td id="scoreE_PL" class="border px-4 py-2"></td>
-                        <td id="scoreE_RI" class="border px-4 py-2"></td>
-                        <td id="scoreE_ME" class="border px-4 py-2"></td>
-                        <td id="scoreE_IM" class="border px-4 py-2"></td>
-                        <td id="scoreE_TW" class="border px-4 py-2"></td>
-                        <td id="scoreE_CF" class="border px-4 py-2"></td>
-                    </tr>
-                    <tr>
-                        <td class="border px-4 py-2">Section F</td>
-                        <td id="scoreF_SH" class="border px-4 py-2"></td>
-                        <td id="scoreF_CO" class="border px-4 py-2"></td>
-                        <td id="scoreF_PL" class="border px-4 py-2"></td>
-                        <td id="scoreF_RI" class="border px-4 py-2"></td>
-                        <td id="scoreF_ME" class="border px-4 py-2"></td>
-                        <td id="scoreF_IM" class="border px-4 py-2"></td>
-                        <td id="scoreF_TW" class="border px-4 py-2"></td>
-                        <td id="scoreF_CF" class="border px-4 py-2"></td>
-                    </tr>
-                    <tr>
-                        <td class="border px-4 py-2">Section G</td>
-                        <td id="scoreG_SH" class="border px-4 py-2"></td>
-                        <td id="scoreG_CO" class="border px-4 py-2"></td>
-                        <td id="scoreG_PL" class="border px-4 py-2"></td>
-                        <td id="scoreG_RI" class="border px-4 py-2"></td>
-                        <td id="scoreG_ME" class="border px-4 py-2"></td>
-                        <td id="scoreG_IM" class="border px-4 py-2"></td>
-                        <td id="scoreG_TW" class="border px-4 py-2"></td>
-                        <td id="scoreG_CF" class="border px-4 py-2"></td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr class="bg-gray-200">
-                        <td class="border px-4 py-2">Total</td>
-                        <td id="total_SH" class="border px-4 py-2"></td>
-                        <td id="total_CO" class="border px-4 py-2"></td>
-                        <td id="total_PL" class="border px-4 py-2"></td>
-                        <td id="total_RI" class="border px-4 py-2"></td>
-                        <td id="total_ME" class="border px-4 py-2"></td>
-                        <td id="total_IM" class="border px-4 py-2"></td>
-                        <td id="total_TW" class="border px-4 py-2"></td>
-                        <td id="total_CF" class="border px-4 py-2"></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </div>
-
-        <div class="section mt-8 hidden" id="profile">
-            <h2 class="text-2xl font-semibold mb-4">Profile Conclusion</h2>
-            <div id="profileConclusion" class="p-4 bg-gray-100 rounded shadow"></div>
+        <div id="understanding-profile" class="hidden">
+            <h2 class="text-2xl font-semibold mb-4">Understanding Your Profile</h2>
+            <p class="text-md mb-4">Each of the eight Belbin team roles has its own unique characteristics and
+                contributions to the team. Here is a brief overview:</p>
+            <ul class="list-disc ml-6">
+                <li><strong>Shaper (SH)</strong>: Highly motivated, outgoing, dynamic. Thrive on pressure and
+                    confrontation. Strengths: Drive, readiness to challenge. Weaknesses: Prone to provocation,
+                    irritation, impatience.</li>
+                <li><strong>Coordinator (CO)</strong>: Calm, self-confident, controlled. Good at delegating and
+                    achieving shared goals. Strengths: Welcome all contributors, main objective focus. Weaknesses: No
+                    intellectual or creative pretensions.</li>
+                <li><strong>Plant (PL)</strong>: Innovative, creative, unorthodox. Generate new ideas and solve complex
+                    problems. Strengths: Genius, imagination, intellect, knowledge. Weaknesses: Disregard practical
+                    details or protocol.</li>
+                <li><strong>Resource Investigator (RI)</strong>: Extroverted, enthusiastic, communicative. Develop
+                    contacts and explore opportunities. Strengths: Find useful people and ideas. Weaknesses: Lose
+                    interest quickly.</li>
+                <li><strong>Monitor Evaluator (ME)</strong>: Sober, unemotional, prudent. Make shrewd judgements and
+                    evaluations. Strengths: Judgement, discretion, hard-headedness. Weaknesses: Lack inspiration or
+                    ability to motivate others.</li>
+                <li><strong>Implementer (IM)</strong>: Well-organized, practical, disciplined. Reliable and efficient in
+                    application. Strengths: Organizing ability, practical common sense, hard working. Weaknesses: Lack
+                    of flexibility, resistance to unproven ideas.</li>
+                <li><strong>Team Worker (TW)</strong>: Socially oriented, mild, sensitive. Support team members and
+                    avoid friction. Strengths: Promote team spirit, respond to people and situations. Weaknesses:
+                    Indecision at moments of crisis.</li>
+                <li><strong>Completer-Finisher (CF)</strong>: Painstaking, orderly, conscientious, anxious. Attention to
+                    detail and follow-through. Strengths: Fulfilling promises, high standards. Weaknesses: Worry about
+                    small things, reluctance to delegate.</li>
+            </ul>
         </div>
     </div>
 
     <footer class="mt-8 p-4 bg-gray-200 text-center rounded">
-        <p class="text-sm">This application is developed for educational purposes and there is no guarantee the program will work as intended. It is free for use and redistribution under the MIT License.</p>
+        <p class="text-sm">This application is developed for educational purposes and there is no guarantee the program
+            will work as intended. It is free for use and redistribution under the MIT License.</p>
         <p class="text-sm mt-2">Developer: Chuks Abanum</p>
         <p class="text-sm">Email: oilmonegov@gmail.com</p>
         <p class="text-sm">Phone: +234 (810) 131-5419</p>
@@ -907,4 +1051,5 @@
         }
     </script>
 </body>
+
 </html>
