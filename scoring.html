@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belbin Scoring Inventory</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+        <nav class="mb-8">
+            <ul class="flex justify-center space-x-4">
+                <li><a href="index.html" class="text-blue-500 hover:underline">Belbin Team Roles</a></li>
+                <li><a href="questionnaire.html" class="text-blue-500 hover:underline">Questionnaire</a></li>
+                <li><a href="scoring.html" class="text-blue-500 hover:underline">Scoring Inventory</a></li>
+            </ul>
+        </nav>
+
+        <h1 class="text-3xl font-bold text-center mb-4">Scoring Inventory</h1>
+
+        <section id="scoring-table" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">Scoring Table</h2>
+            <p class="text-md mb-4">
+                Transfer your points allocation from the seven sections of the Self Perception Inventory to the
+                appropriate boxes below.
+                The pre-printed numbers in the grid refer to the question numbers of each section. For example, if for
+                Section A you scored seven points for question 6 and three points for question 1, you would allocate them in the
+                columns RI and IM respectively.
+            </p>
+            <table class="w-full table-auto border-collapse mb-8 shadow-md rounded-lg">
+                <thead>
+                    <tr class="bg-blue-500 text-white">
+                        <th class="px-4 py-2">Role</th>
+                        <th class="px-4 py-2">SH</th>
+                        <th class="px-4 py-2">CO</th>
+                        <th class="px-4 py-2">PL</th>
+                        <th class="px-4 py-2">RI</th>
+                        <th class="px-4 py-2">ME</th>
+                        <th class="px-4 py-2">IM</th>
+                        <th class="px-4 py-2">TW</th>
+                        <th class="px-4 py-2">CF</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-gray-100 border-t">
+                        <td class="border px-4 py-2 font-semibold">Section A</td>
+                        <td class="border px-4 py-2" data-question="A3"></td>
+                        <td class="border px-4 py-2" data-question="A7"></td>
+                        <td class="border px-4 py-2" data-question="A4"></td>
+                        <td class="border px-4 py-2" data-question="A6"></td>
+                        <td class="border px-4 py-2" data-question="A5"></td>
+                        <td class="border px-4 py-2" data-question="A1"></td>
+                        <td class="border px-4 py-2" data-question="A8"></td>
+                        <td class="border px-4 py-2" data-question="A2"></td>
+                    </tr>
+                    <tr class="bg-white border-t">
+                        <td class="border px-4 py-2 font-semibold">Section B</td>
+                        <td class="border px-4 py-2" data-question="B1"></td>
+                        <td class="border px-4 py-2" data-question="B6"></td>
+                        <td class="border px-4 py-2" data-question="B5"></td>
+                        <td class="border px-4 py-2" data-question="B8"></td>
+                        <td class="border px-4 py-2" data-question="B4"></td>
+                        <td class="border px-4 py-2" data-question="B7"></td>
+                        <td class="border px-4 py-2" data-question="B3"></td>
+                        <td class="border px-4 py-2" data-question="B2"></td>
+                    </tr>
+                    <tr class="bg-gray-100 border-t">
+                        <td class="border px-4 py-2 font-semibold">Section C</td>
+                        <td class="border px-4 py-2" data-question="C7"></td>
+                        <td class="border px-4 py-2" data-question="C4"></td>
+                        <td class="border px-4 py-2" data-question="C6"></td>
+                        <td class="border px-4 py-2" data-question="C2"></td>
+                        <td class="border px-4 py-2" data-question="C3"></td>
+                        <td class="border px-4 py-2" data-question="C5"></td>
+                        <td class="border px-4 py-2" data-question="C8"></td>
+                        <td class="border px-4 py-2" data-question="C1"></td>
+                    </tr>
+                    <tr class="bg-white border-t">
+                        <td class="border px-4 py-2 font-semibold">Section D</td>
+                        <td class="border px-4 py-2" data-question="D2"></td>
+                        <td class="border px-4 py-2" data-question="D3"></td>
+                        <td class="border px-4 py-2" data-question="D6"></td>
+                        <td class="border px-4 py-2" data-question="D4"></td>
+                        <td class="border px-4 py-2" data-question="D5"></td>
+                        <td class="border px-4 py-2" data-question="D1"></td>
+                        <td class="border px-4 py-2" data-question="D8"></td>
+                        <td class="border px-4 py-2" data-question="D7"></td>
+                    </tr>
+                    <tr class="bg-gray-100 border-t">
+                        <td class="border px-4 py-2 font-semibold">Section E</td>
+                        <td class="border px-4 py-2" data-question="E6"></td>
+                        <td class="border px-4 py-2" data-question="E5"></td>
+                        <td class="border px-4 py-2" data-question="E1"></td>
+                        <td class="border px-4 py-2" data-question="E7"></td>
+                        <td class="border px-4 py-2" data-question="E3"></td>
+                        <td class="border px-4 py-2" data-question="E4"></td>
+                        <td class="border px-4 py-2" data-question="E2"></td>
+                        <td class="border px-4 py-2" data-question="E8"></td>
+                    </tr>
+                    <tr class="bg-white border-t">
+                        <td class="border px-4 py-2 font-semibold">Section F</td>
+                        <td class="border px-4 py-2" data-question="F6"></td>
+                        <td class="border px-4 py-2" data-question="F4"></td>
+                        <td class="border px-4 py-2" data-question="F5"></td>
+                        <td class="border px-4 py-2" data-question="F1"></td>
+                        <td class="border px-4 py-2" data-question="F3"></td>
+                        <td class="border px-4 py-2" data-question="F8"></td>
+                        <td class="border px-4 py-2" data-question="F7"></td>
+                        <td class="border px-4 py-2" data-question="F2"></td>
+                    </tr>
+                    <tr class="bg-gray-100 border-t">
+                        <td class="border px-4 py-2 font-semibold">Section G</td>
+                        <td class="border px-4 py-2" data-question="G5"></td>
+                        <td class="border px-4 py-2" data-question="G7"></td>
+                        <td class="border px-4 py-2" data-question="G6"></td>
+                        <td class="border px-4 py-2" data-question="G3"></td>
+                        <td class="border px-4 py-2" data-question="G2"></td>
+                        <td class="border px-4 py-2" data-question="G1"></td>
+                        <td class="border px-4 py-2" data-question="G8"></td>
+                        <td class="border px-4 py-2" data-question="G4"></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="bg-blue-500 text-white">
+                        <td class="border px-4 py-2 font-semibold">Total</td>
+                        <td id="total_SH" class="border px-4 py-2"></td>
+                        <td id="total_CO" class="border px-4 py-2"></td>
+                        <td id="total_PL" class="border px-4 py-2"></td>
+                        <td id="total_RI" class="border px-4 py-2"></td>
+                        <td id="total_ME" class="border px-4 py-2"></td>
+                        <td id="total_IM" class="border px-4 py-2"></td>
+                        <td id="total_TW" class="border px-4 py-2"></td>
+                        <td id="total_CF" class="border px-4 py-2"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="explanation" class="mb-8">
+            <h2 class="text-2xl font-semibold mb-4">How to Calculate Your Result</h2>
+            <p class="text-md mb-4">
+                Once you have allocated all your points, total each column. The highest two totals represent your
+                primary and secondary preferred team roles.
+            </p>
+            <table class="w-full table-auto border-collapse shadow-md rounded-lg">
+                <thead>
+                    <tr class="bg-blue-500 text-white">
+                        <th class="px-4 py-2">Role</th>
+                        <th class="px-4 py-2">SH</th>
+                        <th class="px-4 py-2">CO</th>
+                        <th class="px-4 py-2">PL</th>
+                        <th class="px-4 py-2">RI</th>
+                        <th class="px-4 py-2">ME</th>
+                        <th class="px-4 py-2">IM</th>
+                        <th class="px-4 py-2">TW</th>
+                        <th class="px-4 py-2">CF</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="bg-gray-100 border-t">
+                        <td class="border px-4 py-2 font-semibold">Section A</td>
+                        <td id="explain_A_SH" class="border px-4 py-2">Question 3</td>
+                        <td id="explain_A_CO" class="border px-4 py-2">Question 7</td>
+                        <td id="explain_A_PL" class="border px-4 py-2">Question 4</td>
+                        <td id="explain_A_RI" class="border px-4 py-2">Question 6</td>
+                        <td id="explain_A_ME" class="border px-4 py-2">Question 5</td>
+                        <td id="explain_A_IM" class="border px-4 py-2">Question 1</td>
+                        <td id="explain_A_TW" class="border px-4 py-2">Question 8</td>
+                        <td id="explain_A_CF" class="border px-4 py-2">Question 2</td>
+                    </tr>
+                    <tr class="bg-white border-t">
+                        <td class="border px-4 py-2 font-semibold">Section B</td>
+                        <td id="explain_B_SH" class="border px-4 py-2">Question 1</td>
+                        <td id="explain_B_CO" class="border px-4 py-2">Question 6</td>
+                        <td id="explain_B_PL" class="border px-4 py-2">Question 5</td>
+                        <td id="explain_B_RI" class="border px-4 py-2">Question 8</td>
+                        <td id="explain_B_ME" class="border px-4 py-2">Question 4</td>
+                        <td id="explain_B_IM" class="border px-4 py-2">Question 7</td>
+                        <td id="explain_B_TW" class="border px-4 py-2">Question 3</td>
+                        <td id="explain_B_CF" class="border px-4 py-2">Question 2</td>
+                    </tr>
+                    <tr class="bg-gray-100 border-t">
+                        <td class="border px-4 py-2 font-semibold">Section C</td>
+                        <td id="explain_C_SH" class="border px-4 py-2">Question 7</td>
+                        <td id="explain_C_CO" class="border px-4 py-2">Question 4</td>
+                        <td id="explain_C_PL" class="border px-4 py-2">Question 6</td>
+                        <td id="explain_C_RI" class="border px-4 py-2">Question 2</td>
+                        <td id="explain_C_ME" class="border px-4 py-2">Question 3</td>
+                        <td id="explain_C_IM" class="border px-4 py-2">Question 5</td>
+                        <td id="explain_C_TW" class="border px-4 py-2">Question 8</td>
+                        <td id="explain_C_CF" class="border px-4 py-2">Question 1</td>
+                    </tr>
+                    <tr class="bg-white border-t">
+                        <td class="border px-4 py-2 font-semibold">Section D</td>
+                        <td id="explain_D_SH" class="border px-4 py-2">Question 2</td>
+                        <td id="explain_D_CO" class="border px-4 py-2">Question 3</td>
+                        <td id="explain_D_PL" class="border px-4 py-2">Question 6</td>
+                        <td id="explain_D_RI" class="border px-4 py-2">Question 4</td>
+                        <td id="explain_D_ME" class="border px-4 py-2">Question 5</td>
+                        <td id="explain_D_IM" class="border px-4 py-2">Question 1</td>
+                        <td id="explain_D_TW" class="border px-4 py-2">Question 8</td>
+                        <td id="explain_D_CF" class="border px-4 py-2">Question 7</td>
+                    </tr>
+                    <tr class="bg-gray-100 border-t">
+                        <td class="border px-4 py-2 font-semibold">Section E</td>
+                        <td id="explain_E_SH" class="border px-4 py-2">Question 6</td>
+                        <td id="explain_E_CO" class="border px-4 py-2">Question 5</td>
+                        <td id="explain_E_PL" class="border px-4 py-2">Question 1</td>
+                        <td id="explain_E_RI" class="border px-4 py-2">Question 7</td>
+                        <td id="explain_E_ME" class="border px-4 py-2">Question 3</td>
+                        <td id="explain_E_IM" class="border px-4 py-2">Question 4</td>
+                        <td id="explain_E_TW" class="border px-4 py-2">Question 2</td>
+                        <td id="explain_E_CF" class="border px-4 py-2">Question 8</td>
+                    </tr>
+                    <tr class="bg-white border-t">
+                        <td class="border px-4 py-2 font-semibold">Section F</td>
+                        <td id="explain_F_SH" class="border px-4 py-2">Question 6</td>
+                        <td id="explain_F_CO" class="border px-4 py-2">Question 4</td>
+                        <td id="explain_F_PL" class="border px-4 py-2">Question 5</td>
+                        <td id="explain_F_RI" class="border px-4 py-2">Question 1</td>
+                        <td id="explain_F_ME" class="border px-4 py-2">Question 3</td>
+                        <td id="explain_F_IM" class="border px-4 py-2">Question 8</td>
+                        <td id="explain_F_TW" class="border px-4 py-2">Question 7</td>
+                        <td id="explain_F_CF" class="border px-4 py-2">Question 2</td>
+                    </tr>
+                    <tr class="bg-gray-100 border-t">
+                        <td class="border px-4 py-2 font-semibold">Section G</td>
+                        <td id="explain_G_SH" class="border px-4 py-2">Question 5</td>
+                        <td id="explain_G_CO" class="border px-4 py-2">Question 7</td>
+                        <td id="explain_G_PL" class="border px-4 py-2">Question 6</td>
+                        <td id="explain_G_RI" class="border px-4 py-2">Question 3</td>
+                        <td id="explain_G_ME" class="border px-4 py-2">Question 2</td>
+                        <td id="explain_G_IM" class="border px-4 py-2">Question 1</td>
+                        <td id="explain_G_TW" class="border px-4 py-2">Question 8</td>
+                        <td id="explain_G_CF" class="border px-4 py-2">Question 4</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="bg-blue-500 text-white">
+                        <td class="border px-4 py-2 font-semibold">Total</td>
+                        <td id="total_SH" class="border px-4 py-2"></td>
+                        <td id="total_CO" class="border px-4 py-2"></td>
+                        <td id="total_PL" class="border px-4 py-2"></td>
+                        <td id="total_RI" class="border px-4 py-2"></td>
+                        <td id="total_ME" class="border px-4 py-2"></td>
+                        <td id="total_IM" class="border px-4 py-2"></td>
+                        <td id="total_TW" class="border px-4 py-2"></td>
+                        <td id="total_CF" class="border px-4 py-2"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </div>
+
+    <footer class="mt-8 p-4 bg-gray-200 text-center rounded">
+        <p class="text-sm">This application is developed for educational purposes and there is no guarantee the program will work as intended. It is free for use and redistribution under the MIT License.</p>
+        <p class="text-sm mt-2">Developer: Chuks Abanum</p>
+        <p class="text-sm">Email: oilmonegov@gmail.com</p>
+        <p class="text-sm">Phone: +234 (810) 131-5419</p>
+    </footer>
+</body>
+</html>

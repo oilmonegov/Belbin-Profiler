@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belbin Team Roles Questionnaire</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .hidden { display: none; }
+
+        /* Reverted Switch styles */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 20px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 14px;
+            width: 14px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+
+        /* Tooltip styles */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 220px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -110px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #333 transparent transparent transparent;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+        <nav class="mb-8">
+            <ul class="flex justify-center space-x-4">
+                <li><a href="index.html" class="text-blue-500 hover:underline">Belbin Team Roles</a></li>
+                <li><a href="questionnaire.html" class="text-blue-500 hover:underline">Questionnaire</a></li>
+                <li><a href="scoring.html" class="text-blue-500 hover:underline">Scoring Inventory</a></li>
+            </ul>
+        </nav>
+        
+        <h1 class="text-3xl font-bold text-center mb-8">Belbin Team Roles Questionnaire</h1>
+
+        <hr>
+
+        <h2 class="text-2xl font-semibold mb-4 mt-4">Belbin Team Roles Self Perception Inventory</h2>
+        <p class="text-md mb-8">
+            To complete each section of this questionnaire, tick in the far left hand column the one, two, or three sentences most applicable to yourself. Then in the column on the right, apportion 10 points between those sentences that apply to you: one of which you feel sums you up well while the other only applies some of the time.
+        </p>
+        <p class="text-md mb-8">
+            In this instance you could give your first choice seven points and the remaining points to your second choice. In some instances you might decide that there are two sentences that apply to you equally - if this is the case, award five points to each.
+        </p>
+        <p class="text-md mb-8 font-semibold">You must allocate all 10 points in each section.</p>
+
+
+        <div id="questionnaire">
+            <!-- Section A -->
+            <div class="section mb-8" id="sectionA">
+                <h2 class="text-2xl font-semibold mb-4">Section A - When involved in a project with other people:</h2>
+                <form id="formA" class="space-y-4">
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="A1" onchange="validateSection('formA')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I can be relied upon to see that work that needs to be done is organised.
+                                <span class="tooltiptext">You take responsibility to ensure tasks are completed efficiently and on time.</span>
+                            </span>
+                            <input type="number" name="pointsA1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="A2" onchange="validateSection('formA')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I pick up slips and omissions that others fail to notice.
+                                <span class="tooltiptext">You notice and correct errors that others might overlook.</span>
+                            </span>
+                            <input type="number" name="pointsA2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="A3" onchange="validateSection('formA')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I react strongly when meetings look like losing track of the main objective.
+                                <span class="tooltiptext">You are proactive in keeping discussions focused and goal-oriented.</span>
+                            </span>
+                            <input type="number" name="pointsA3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="A4" onchange="validateSection('formA')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I produce original suggestions.
+                                <span class="tooltiptext">You contribute unique and creative ideas to the group.</span>
+                            </span>
+                            <input type="number" name="pointsA4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="A5" onchange="validateSection('formA')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I analyse other people's ideas objectively, for both merits and failings.
+                                <span class="tooltiptext">You critically evaluate ideas to highlight strengths and weaknesses.</span>
+                            </span>
+                            <input type="number" name="pointsA5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="A6" onchange="validateSection('formA')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I am keen to find out the latest ideas and developments.
+                                <span class="tooltiptext">You actively seek out new information and trends relevant to your work.</span>
+                            </span>
+                            <input type="number" name="pointsA6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="A7" onchange="validateSection('formA')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I have an aptitude for organising people.
+                                <span class="tooltiptext">You are skilled at coordinating and managing team activities.</span>
+                            </span>
+                            <input type="number" name="pointsA7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="A8" onchange="validateSection('formA')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I am always ready to support good suggestions that help to resolve a problem.
+                                <span class="tooltiptext">You are open to and supportive of effective solutions proposed by others.</span>
+                            </span>
+                            <input type="number" name="pointsA8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Section B -->
+            <div class="section mb-8" id="sectionB">
+                <h2 class="text-2xl font-semibold mb-4">Section B - In seeking satisfaction through my work:</h2>
+                <form id="formB" class="space-y-4">
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="B1" onchange="validateSection('formB')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I like to have a strong influence on decisions.
+                                <span class="tooltiptext">You enjoy playing a key role in decision-making processes.</span>
+                            </span>
+                            <input type="number" name="pointsB1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="B2" onchange="validateSection('formB')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I feel in my element where work requires a high degree of attention & concentration.
+                                <span class="tooltiptext">You thrive in tasks that demand focus and precision.</span>
+                            </span>
+                            <input type="number" name="pointsB2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="B3" onchange="validateSection('formB')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I am concerned to help colleagues with their problems.
+                                <span class="tooltiptext">You are supportive and assist colleagues with their challenges.</span>
+                            </span>
+                            <input type="number" name="pointsB3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="B4" onchange="validateSection('formB')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I like to make critical discrimination between alternatives.
+                                <span class="tooltiptext">You evaluate different options carefully before making a decision.</span>
+                            </span>
+                            <input type="number" name="pointsB4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="B5" onchange="validateSection('formB')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I tend to have a creative approach to problem solving.
+                                <span class="tooltiptext">You use creativity and innovation to find solutions.</span>
+                            </span>
+                            <input type="number" name="pointsB5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="B6" onchange="validateSection('formB')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I enjoy reconciling different points of view.
+                                <span class="tooltiptext">You like finding common ground and resolving conflicts.</span>
+                            </span>
+                            <input type="number" name="pointsB6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="B7" onchange="validateSection('formB')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I am more interested in practicalities than new ideas.
+                                <span class="tooltiptext">You focus on practical solutions rather than theoretical concepts.</span>
+                            </span>
+                            <input type="number" name="pointsB7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="B8" onchange="validateSection('formB')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I particularly enjoy exploring different views and techniques.
+                                <span class="tooltiptext">You are enthusiastic about learning and trying new methods.</span>
+                            </span>
+                            <input type="number" name="pointsB8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Section C -->
+            <div class="section mb-8" id="sectionC">
+                <h2 class="text-2xl font-semibold mb-4">Section C - When the team is trying to solve a particularly complex problem:</h2>
+                <form id="formC" class="space-y-4">
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="C1" onchange="validateSection('formC')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I keep a watching eye on areas where difficulty may arise.
+                                <span class="tooltiptext">You are vigilant and anticipate potential problems.</span>
+                            </span>
+                            <input type="number" name="pointsC1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="C2" onchange="validateSection('formC')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I explore ideas that may have a wider application than in the immediate task.
+                                <span class="tooltiptext">You consider how solutions can be applied to other areas.</span>
+                            </span>
+                            <input type="number" name="pointsC2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="C3" onchange="validateSection('formC')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I like to weigh up and evaluate a range of suggestions thoroughly before choosing.
+                                <span class="tooltiptext">You carefully consider all options before making a decision.</span>
+                            </span>
+                            <input type="number" name="pointsC3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="C4" onchange="validateSection('formC')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I can co-ordinate and use productively other people's abilities and talents.
+                                <span class="tooltiptext">You effectively utilize the skills of team members.</span>
+                            </span>
+                            <input type="number" name="pointsC4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="C5" onchange="validateSection('formC')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I maintain a steady systematic approach, whatever the pressures.
+                                <span class="tooltiptext">You stay calm and organized under pressure.</span>
+                            </span>
+                            <input type="number" name="pointsC5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="C6" onchange="validateSection('formC')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I often produce a new approach to a long continuing problem.
+                                <span class="tooltiptext">You offer innovative solutions to ongoing issues.</span>
+                            </span>
+                            <input type="number" name="pointsC6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="C7" onchange="validateSection('formC')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I am ready to make my personal views known in a forceful way if necessary.
+                                <span class="tooltiptext">You assertively express your opinions when needed.</span>
+                            </span>
+                            <input type="number" name="pointsC7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="C8" onchange="validateSection('formC')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I am ready to help whenever I can.
+                                <span class="tooltiptext">You are always willing to assist others.</span>
+                            </span>
+                            <input type="number" name="pointsC8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Section D -->
+            <div class="section mb-8" id="sectionD">
+                <h2 class="text-2xl font-semibold mb-4">Section D - In carrying out my day-to-day work:</h2>
+                <form id="formD" class="space-y-4">
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="D1" onchange="validateSection('formD')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I am keen to see there is nothing vague about my task and objectives.
+                                <span class="tooltiptext">You ensure that your tasks and goals are clear and well-defined.</span>
+                            </span>
+                            <input type="number" name="pointsD1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="D2" onchange="validateSection('formD')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I am not reluctant to emphasise my own point of view in meetings.
+                                <span class="tooltiptext">You confidently share your perspective in discussions.</span>
+                            </span>
+                            <input type="number" name="pointsD2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="D3" onchange="validateSection('formD')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I can work with all sorts of people provided that they have got something worthwhile to contribute.
+                                <span class="tooltiptext">You are flexible and can collaborate with a diverse range of individuals.</span>
+                            </span>
+                            <input type="number" name="pointsD3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="D4" onchange="validateSection('formD')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I make a point of following up interesting ideas and/or people.
+                                <span class="tooltiptext">You proactively seek out and engage with new concepts and individuals.</span>
+                            </span>
+                            <input type="number" name="pointsD4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="D5" onchange="validateSection('formD')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I can usually find the argument to refute unsound propositions.
+                                <span class="tooltiptext">You are skilled at identifying and challenging flawed ideas.</span>
+                            </span>
+                            <input type="number" name="pointsD5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="D6" onchange="validateSection('formD')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I tend to see patterns where others would see items as unconnected.
+                                <span class="tooltiptext">You have a knack for identifying connections and patterns.</span>
+                            </span>
+                            <input type="number" name="pointsD6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="D7" onchange="validateSection('formD')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">Being busy gives me real satisfaction.
+                                <span class="tooltiptext">You find fulfillment in staying active and productive.</span>
+                            </span>
+                            <input type="number" name="pointsD7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="D8" onchange="validateSection('formD')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I have a quiet interest in getting to know people better.
+                                <span class="tooltiptext">You are naturally curious about others and enjoy learning about them.</span>
+                            </span>
+                            <input type="number" name="pointsD8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Section E -->
+            <div class="section mb-8" id="sectionE">
+                <h2 class="text-2xl font-semibold mb-4">Section E - If I am suddenly given a difficult task with limited time & unfamiliar people:</h2>
+                <form id="formE" class="space-y-4">
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="E1" onchange="validateSection('formE')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I often find my imagination frustrated by working in a group.
+                                <span class="tooltiptext">You may struggle to express creativity in a team setting.</span>
+                            </span>
+                            <input type="number" name="pointsE1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="E2" onchange="validateSection('formE')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I find my personal skill particularly appropriate in achieving agreement.
+                                <span class="tooltiptext">You are good at mediating and reaching consensus.</span>
+                            </span>
+                            <input type="number" name="pointsE2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="E3" onchange="validateSection('formE')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">My feelings seldom interfere with my judgment.
+                                <span class="tooltiptext">You make decisions based on logic rather than emotions.</span>
+                            </span>
+                            <input type="number" name="pointsE3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="E4" onchange="validateSection('formE')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I strive to build up an effective structure.
+                                <span class="tooltiptext">You work towards creating a well-organized framework.</span>
+                            </span>
+                            <input type="number" name="pointsE4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="E5" onchange="validateSection('formE')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I can work with people who vary widely in their personal qualities and outlook.
+                                <span class="tooltiptext">You adapt well to working with diverse personalities.</span>
+                            </span>
+                            <input type="number" name="pointsE5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="E6" onchange="validateSection('formE')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I feel it is sometimes worth incurring some temporary unpopularity if one is to succeed in getting one's views across in a group.
+                                <span class="tooltiptext">You are willing to risk unpopularity to advocate for your ideas.</span>
+                            </span>
+                            <input type="number" name="pointsE6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="E7" onchange="validateSection('formE')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I usually know someone whose specialist knowledge is particularly apt.
+                                <span class="tooltiptext">You have a network of experts you can rely on for specialized knowledge.</span>
+                            </span>
+                            <input type="number" name="pointsE7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="E8" onchange="validateSection('formE')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I seem to develop a natural sense of urgency.
+                                <span class="tooltiptext">You instinctively prioritize and act quickly when needed.</span>
+                            </span>
+                            <input type="number" name="pointsE8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Section F -->
+            <div class="section mb-8" id="sectionF">
+                <h2 class="text-2xl font-semibold mb-4">Section F - When suddenly asked to consider a new project:</h2>
+                <form id="formF" class="space-y-4">
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="F1" onchange="validateSection('formF')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I start to look around for possible ideas and openings.
+                                <span class="tooltiptext">You immediately seek out new opportunities and approaches.</span>
+                            </span>
+                            <input type="number" name="pointsF1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="F2" onchange="validateSection('formF')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I am concerned to finish and perfect current work before I start.
+                                <span class="tooltiptext">You prefer to complete existing tasks thoroughly before beginning new ones.</span>
+                            </span>
+                            <input type="number" name="pointsF2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="F3" onchange="validateSection('formF')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I approach the problem in a carefully analytical way.
+                                <span class="tooltiptext">You systematically analyze new projects to identify the best solutions.</span>
+                            </span>
+                            <input type="number" name="pointsF3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="F4" onchange="validateSection('formF')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I am able to assert myself to get other people involved if necessary.
+                                <span class="tooltiptext">You can take charge and motivate others to participate.</span>
+                            </span>
+                            <input type="number" name="pointsF4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="F5" onchange="validateSection('formF')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I am able to take an independent and innovative look at most situations.
+                                <span class="tooltiptext">You offer unique and independent perspectives on projects.</span>
+                            </span>
+                            <input type="number" name="pointsF5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="F6" onchange="validateSection('formF')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I am happy to take the lead when action is required.
+                                <span class="tooltiptext">You are comfortable stepping into leadership roles.</span>
+                            </span>
+                            <input type="number" name="pointsF6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="F7" onchange="validateSection('formF')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I can respond positively to my colleagues and their initiatives.
+                                <span class="tooltiptext">You are supportive of colleagues' ideas and initiatives.</span>
+                            </span>
+                            <input type="number" name="pointsF7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="F8" onchange="validateSection('formF')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I find it hard to give in a job where the goals are not clearly defined.
+                                <span class="tooltiptext">You struggle with tasks that lack clear objectives and direction.</span>
+                            </span>
+                            <input type="number" name="pointsF8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Section G -->
+            <div class="section mb-8" id="sectionG">
+                <h2 class="text-2xl font-semibold mb-4">Section G - In contributing to group projects in general:</h2>
+                <form id="formG" class="space-y-4">
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="G1" onchange="validateSection('formG')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I think I have a talent for sorting out the concrete steps that need to be taken given a broad brief.
+                                <span class="tooltiptext">You excel at breaking down broad tasks into specific actions.</span>
+                            </span>
+                            <input type="number" name="pointsG1" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="G2" onchange="validateSection('formG')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">My considered judgement may take time but is usually near the mark.
+                                <span class="tooltiptext">Your careful deliberation often leads to accurate decisions.</span>
+                            </span>
+                            <input type="number" name="pointsG2" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="G3" onchange="validateSection('formG')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">A broad range of personal contacts is important to my style of working.
+                                <span class="tooltiptext">You rely on a wide network of contacts for your work.</span>
+                            </span>
+                            <input type="number" name="pointsG3" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="G4" onchange="validateSection('formG')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I have an eye for getting the details right.
+                                <span class="tooltiptext">You pay close attention to detail to ensure accuracy.</span>
+                            </span>
+                            <input type="number" name="pointsG4" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="G5" onchange="validateSection('formG')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I try to make my mark in group meetings.
+                                <span class="tooltiptext">You aim to contribute significantly in group discussions.</span>
+                            </span>
+                            <input type="number" name="pointsG5" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="G6" onchange="validateSection('formG')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I can see how ideas and techniques can be used in new relationships.
+                                <span class="tooltiptext">You identify new applications for ideas and techniques in different contexts.</span>
+                            </span>
+                            <input type="number" name="pointsG6" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="G7" onchange="validateSection('formG')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I see both sides of a problem and take a decision acceptable to all.
+                                <span class="tooltiptext">You consider different perspectives and make balanced decisions.</span>
+                            </span>
+                            <input type="number" name="pointsG7" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                    <div class="question">
+                        <label class="flex items-center">
+                            <span class="switch">
+                                <input type="checkbox" name="G8" onchange="validateSection('formG')">
+                                <span class="slider"></span>
+                            </span>
+                            <span class="ml-4 tooltip">I get on well with others and work hard for the team.
+                                <span class="tooltiptext">You have good interpersonal skills and are a team player.</span>
+                            </span>
+                            <input type="number" name="pointsG8" min="0" max="10" class="ml-4 w-16 p-2 border rounded border-gray-300 appearance-none" disabled>
+                        </label>
+                    </div>
+                </form>
+            </div>
+
+            <button onclick="calculateScores()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Calculate Scores</button>
+
+            <div class="section mt-8 hidden" id="results">
+                <h2 class="text-2xl font-semibold mb-4">Scoring Table</h2>
+                <table class="w-full table-auto border-collapse">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="px-4 py-2">Role</th>
+                            <th class="px-4 py-2">SH</th>
+                            <th class="px-4 py-2">CO</th>
+                            <th class="px-4 py-2">PL</th>
+                            <th class="px-4 py-2">RI</th>
+                            <th class="px-4 py-2">ME</th>
+                            <th class="px-4 py-2">IM</th>
+                            <th class="px-4 py-2">TW</th>
+                            <th class="px-4 py-2">CF</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="border px-4 py-2">Section A</td>
+                            <td id="scoreA_SH" class="border px-4 py-2"></td>
+                            <td id="scoreA_CO" class="border px-4 py-2"></td>
+                            <td id="scoreA_PL" class="border px-4 py-2"></td>
+                            <td id="scoreA_RI" class="border px-4 py-2"></td>
+                            <td id="scoreA_ME" class="border px-4 py-2"></td>
+                            <td id="scoreA_IM" class="border px-4 py-2"></td>
+                            <td id="scoreA_TW" class="border px-4 py-2"></td>
+                            <td id="scoreA_CF" class="border px-4 py-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Section B</td>
+                            <td id="scoreB_SH" class="border px-4 py-2"></td>
+                            <td id="scoreB_CO" class="border px-4 py-2"></td>
+                            <td id="scoreB_PL" class="border px-4 py-2"></td>
+                            <td id="scoreB_RI" class="border px-4 py-2"></td>
+                            <td id="scoreB_ME" class="border px-4 py-2"></td>
+                            <td id="scoreB_IM" class="border px-4 py-2"></td>
+                            <td id="scoreB_TW" class="border px-4 py-2"></td>
+                            <td id="scoreB_CF" class="border px-4 py-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Section C</td>
+                            <td id="scoreC_SH" class="border px-4 py-2"></td>
+                            <td id="scoreC_CO" class="border px-4 py-2"></td>
+                            <td id="scoreC_PL" class="border px-4 py-2"></td>
+                            <td id="scoreC_RI" class="border px-4 py-2"></td>
+                            <td id="scoreC_ME" class="border px-4 py-2"></td>
+                            <td id="scoreC_IM" class="border px-4 py-2"></td>
+                            <td id="scoreC_TW" class="border px-4 py-2"></td>
+                            <td id="scoreC_CF" class="border px-4 py-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Section D</td>
+                            <td id="scoreD_SH" class="border px-4 py-2"></td>
+                            <td id="scoreD_CO" class="border px-4 py-2"></td>
+                            <td id="scoreD_PL" class="border px-4 py-2"></td>
+                            <td id="scoreD_RI" class="border px-4 py-2"></td>
+                            <td id="scoreD_ME" class="border px-4 py-2"></td>
+                            <td id="scoreD_IM" class="border px-4 py-2"></td>
+                            <td id="scoreD_TW" class="border px-4 py-2"></td>
+                            <td id="scoreD_CF" class="border px-4 py-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Section E</td>
+                            <td id="scoreE_SH" class="border px-4 py-2"></td>
+                            <td id="scoreE_CO" class="border px-4 py-2"></td>
+                            <td id="scoreE_PL" class="border px-4 py-2"></td>
+                            <td id="scoreE_RI" class="border px-4 py-2"></td>
+                            <td id="scoreE_ME" class="border px-4 py-2"></td>
+                            <td id="scoreE_IM" class="border px-4 py-2"></td>
+                            <td id="scoreE_TW" class="border px-4 py-2"></td>
+                            <td id="scoreE_CF" class="border px-4 py-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Section F</td>
+                            <td id="scoreF_SH" class="border px-4 py-2"></td>
+                            <td id="scoreF_CO" class="border px-4 py-2"></td>
+                            <td id="scoreF_PL" class="border px-4 py-2"></td>
+                            <td id="scoreF_RI" class="border px-4 py-2"></td>
+                            <td id="scoreF_ME" class="border px-4 py-2"></td>
+                            <td id="scoreF_IM" class="border px-4 py-2"></td>
+                            <td id="scoreF_TW" class="border px-4 py-2"></td>
+                            <td id="scoreF_CF" class="border px-4 py-2"></td>
+                        </tr>
+                        <tr>
+                            <td class="border px-4 py-2">Section G</td>
+                            <td id="scoreG_SH" class="border px-4 py-2"></td>
+                            <td id="scoreG_CO" class="border px-4 py-2"></td>
+                            <td id="scoreG_PL" class="border px-4 py-2"></td>
+                            <td id="scoreG_RI" class="border px-4 py-2"></td>
+                            <td id="scoreG_ME" class="border px-4 py-2"></td>
+                            <td id="scoreG_IM" class="border px-4 py-2"></td>
+                            <td id="scoreG_TW" class="border px-4 py-2"></td>
+                            <td id="scoreG_CF" class="border px-4 py-2"></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="bg-gray-200">
+                            <td class="border px-4 py-2">Total</td>
+                            <td id="total_SH" class="border px-4 py-2"></td>
+                            <td id="total_CO" class="border px-4 py-2"></td>
+                            <td id="total_PL" class="border px-4 py-2"></td>
+                            <td id="total_RI" class="border px-4 py-2"></td>
+                            <td id="total_ME" class="border px-4 py-2"></td>
+                            <td id="total_IM" class="border px-4 py-2"></td>
+                            <td id="total_TW" class="border px-4 py-2"></td>
+                            <td id="total_CF" class="border px-4 py-2"></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div class="section mt-8 hidden" id="profile">
+                <h2 class="text-2xl font-semibold mb-4">Profile Conclusion</h2>
+                <div id="profileConclusion" class="p-4 bg-gray-100 rounded shadow"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-8 p-4 bg-gray-200 text-center rounded">
+        <p class="text-sm">This application is developed for educational purposes and there is no guarantee the program will work as intended. It is free for use and redistribution under the MIT License.</p>
+        <p class="text-sm mt-2">Developer: Chuks Abanum</p>
+        <p class="text-sm">Email: oilmonegov@gmail.com</p>
+        <p class="text-sm">Phone: +234 (810) 131-5419</p>
+    </footer>
+
+    <script>
+        function validateSection(formId) {
+            const form = document.getElementById(formId);
+            const checkboxes = form.querySelectorAll('input[type="checkbox"]');
+            const inputs = form.querySelectorAll('input[type="number"]');
+
+            checkboxes.forEach((checkbox, index) => {
+                inputs[index].disabled = !checkbox.checked;
+                if (!checkbox.checked) {
+                    inputs[index].value = '';
+                }
+            });
+        }
+
+        function calculateScores() {
+            // Initialize scores
+            const scores = {
+                SH: 0, CO: 0, PL: 0, RI: 0, ME: 0, IM: 0, TW: 0, CF: 0
+            };
+
+            // Helper function to process a form
+            function processForm(formId, roleMappings) {
+                const form = document.getElementById(formId);
+                const formData = new FormData(form);
+                let pointsSum = 0;
+                for (const [role, questionNumbers] of Object.entries(roleMappings)) {
+                    questionNumbers.forEach(number => {
+                        const points = Number(formData.get(`points${formId.charAt(formId.length - 1)}${number}`)) || 0;
+                        scores[role] += points;
+                        pointsSum += points;
+                    });
+                }
+                if (pointsSum !== 10) {
+                    alert(`Please ensure that the total points allocated in each section add up to 10.`);
+                    return false;
+                }
+                return true;
+            }
+
+            // Define role mappings for each section
+            const roleMappings = {
+                A: { SH: [3], CO: [7], PL: [4], RI: [6], ME: [5], IM: [1], TW: [8], CF: [2] },
+                B: { SH: [1], CO: [6], PL: [5], RI: [8], ME: [4], IM: [7], TW: [3], CF: [2] },
+                C: { SH: [7], CO: [4], PL: [6], RI: [2], ME: [3], IM: [5], TW: [8], CF: [1] },
+                D: { SH: [2], CO: [3], PL: [6], RI: [4], ME: [5], IM: [1], TW: [8], CF: [7] },
+                E: { SH: [6], CO: [5], PL: [1], RI: [7], ME: [3], IM: [4], TW: [2], CF: [8] },
+                F: { SH: [6], CO: [4], PL: [5], RI: [1], ME: [3], IM: [8], TW: [7], CF: [2] },
+                G: { SH: [5], CO: [7], PL: [6], RI: [3], ME: [2], IM: [1], TW: [8], CF: [4] }
+            };
+
+            // Process each form and validate
+            const forms = ['formA', 'formB', 'formC', 'formD', 'formE', 'formF', 'formG'];
+            for (const formId of forms) {
+                if (!processForm(formId, roleMappings[formId.charAt(formId.length - 1)])) {
+                    return;
+                }
+            }
+
+            // Update scoring table
+            for (const [role, total] of Object.entries(scores)) {
+                document.getElementById(`total_${role}`).textContent = total;
+            }
+
+            // Update section scores
+            function updateSectionScores(sectionId, roleMappings) {
+                for (const [role, questionNumbers] of Object.entries(roleMappings)) {
+                    const sectionTotal = questionNumbers.reduce((acc, number) => acc + (Number(document.querySelector(`#${sectionId} [name="points${sectionId.charAt(sectionId.length - 1)}${number}"]`).value) || 0), 0);
+                    document.getElementById(`score${sectionId.charAt(sectionId.length - 1)}_${role}`).textContent = sectionTotal;
+                }
+            }
+
+            updateSectionScores('formA', roleMappings.A);
+            updateSectionScores('formB', roleMappings.B);
+            updateSectionScores('formC', roleMappings.C);
+            updateSectionScores('formD', roleMappings.D);
+            updateSectionScores('formE', roleMappings.E);
+            updateSectionScores('formF', roleMappings.F);
+            updateSectionScores('formG', roleMappings.G);
+
+            // Generate profile conclusion
+            const profileConclusion = document.getElementById('profileConclusion');
+            const rolesDescription = {
+                SH: 'Shaper: Highly motivated, outgoing, dynamic. Thrive on pressure and confrontation. Strengths: Drive, readiness to challenge. Weaknesses: Prone to provocation, irritation, impatience.',
+                CO: 'Coordinator: Calm, self-confident, controlled. Good at delegating and achieving shared goals. Strengths: Welcome all contributors, main objective focus. Weaknesses: No intellectual or creative pretensions.',
+                PL: 'Plant: Innovative, creative, unorthodox. Generate new ideas and solve complex problems. Strengths: Genius, imagination, intellect, knowledge. Weaknesses: Disregard practical details or protocol.',
+                RI: 'Resource Investigator: Extroverted, enthusiastic, communicative. Develop contacts and explore opportunities. Strengths: Find useful people and ideas. Weaknesses: Lose interest quickly.',
+                ME: 'Monitor Evaluator: Sober, unemotional, prudent. Make shrewd judgements and evaluations. Strengths: Judgement, discretion, hard-headedness. Weaknesses: Lack inspiration or ability to motivate others.',
+                IM: 'Implementer: Well-organized, practical, disciplined. Reliable and efficient in application. Strengths: Organizing ability, practical common sense, hard working. Weaknesses: Lack of flexibility, resistance to unproven ideas.',
+                TW: 'Team Worker: Socially oriented, mild, sensitive. Support team members and avoid friction. Strengths: Promote team spirit, respond to people and situations. Weaknesses: Indecision at moments of crisis.',
+                CF: 'Completer-Finisher: Painstaking, orderly, conscientious, anxious. Attention to detail and follow-through. Strengths: Fulfilling promises, high standards. Weaknesses: Worry about small things, reluctance to delegate.'
+            };
+
+            const primaryRole = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+            const secondaryRole = Object.keys(scores).filter(role => role !== primaryRole).reduce((a, b) => scores[a] > scores[b] ? a : b);
+
+            profileConclusion.innerHTML = `
+                <p class="mb-4">Your primary role is: <strong>${primaryRole}</strong></p>
+                <p class="mb-4">${rolesDescription[primaryRole]}</p>
+                <p class="mb-4">Your secondary role is: <strong>${secondaryRole}</strong></p>
+                <p>${rolesDescription[secondaryRole]}</p>
+            `;
+
+            // Show results and profile sections
+            document.getElementById('results').classList.remove('hidden');
+            document.getElementById('profile').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
